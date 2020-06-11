@@ -1,16 +1,20 @@
 PODS:
+  - SkeletonView (1.8.7)
   - Starscream (4.0.3)
 
 DEPENDENCIES:
+  - SkeletonView
   - Starscream (~> 4.0.0)
 
 SPEC REPOS:
   trunk:
+    - SkeletonView
     - Starscream
 
 SPEC CHECKSUMS:
+  SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
   Starscream: ef06f0961fff0880bca0604416d61141e4faca67
 
-PODFILE CHECKSUM: 39f4fe36f50b32b32593383838eea41362727847
+PODFILE CHECKSUM: ee22eba4d457c3265591ead48866fb1796af6c83
 
 COCOAPODS: 1.8.4
