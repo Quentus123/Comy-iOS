@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7342492222D006E2DE9 /* AppDelegate.swift */; };
+		6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7362492222D006E2DE9 /* SceneDelegate.swift */; };
+		6615B7392492222D006E2DE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7382492222D006E2DE9 /* ViewController.swift */; };
+		6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6615B73A2492222D006E2DE9 /* Main.storyboard */; };
+		6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6615B73D2492222D006E2DE9 /* Comy_iOS.xcdatamodeld */; };
+		6615B7412492222E006E2DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6615B7402492222E006E2DE9 /* Assets.xcassets */; };
+		6615B7442492222E006E2DE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6615B7422492222E006E2DE9 /* LaunchScreen.storyboard */; };
+		6615B74F2492222E006E2DE9 /* Comy_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B74E2492222E006E2DE9 /* Comy_iOSTests.swift */; };
+		6615B75A2492222E006E2DE9 /* Comy_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7592492222E006E2DE9 /* Comy_iOSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6615B74B2492222E006E2DE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6615B7292492222D006E2DE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6615B7302492222D006E2DE9;
+			remoteInfo = "Comy-iOS";
+		};
+		6615B7562492222E006E2DE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6615B7292492222D006E2DE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6615B7302492222D006E2DE9;
+			remoteInfo = "Comy-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6615B7312492222D006E2DE9 /* Comy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6615B7342492222D006E2DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6615B7362492222D006E2DE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6615B7382492222D006E2DE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6615B73B2492222D006E2DE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6615B73E2492222D006E2DE9 /* Comy_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comy_iOS.xcdatamodel; sourceTree = "<group>"; };
+		6615B7402492222E006E2DE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6615B7432492222E006E2DE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6615B7452492222E006E2DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6615B74A2492222E006E2DE9 /* Comy-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comy-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6615B74E2492222E006E2DE9 /* Comy_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comy_iOSTests.swift; sourceTree = "<group>"; };
+		6615B7502492222E006E2DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6615B7552492222E006E2DE9 /* Comy-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comy-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6615B7592492222E006E2DE9 /* Comy_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comy_iOSUITests.swift; sourceTree = "<group>"; };
+		6615B75B2492222E006E2DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6615B72E2492222D006E2DE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6615B7472492222E006E2DE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6615B7522492222E006E2DE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6615B7282492222D006E2DE9 = {
+			isa = PBXGroup;
+			children = (
+				6615B7332492222D006E2DE9 /* Comy-iOS */,
+				6615B74D2492222E006E2DE9 /* Comy-iOSTests */,
+				6615B7582492222E006E2DE9 /* Comy-iOSUITests */,
+				6615B7322492222D006E2DE9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6615B7322492222D006E2DE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6615B7312492222D006E2DE9 /* Comy-iOS.app */,
+				6615B74A2492222E006E2DE9 /* Comy-iOSTests.xctest */,
+				6615B7552492222E006E2DE9 /* Comy-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6615B7332492222D006E2DE9 /* Comy-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6615B7342492222D006E2DE9 /* AppDelegate.swift */,
+				6615B7362492222D006E2DE9 /* SceneDelegate.swift */,
+				6615B7382492222D006E2DE9 /* ViewController.swift */,
+				6615B73A2492222D006E2DE9 /* Main.storyboard */,
+				6615B7402492222E006E2DE9 /* Assets.xcassets */,
+				6615B7422492222E006E2DE9 /* LaunchScreen.storyboard */,
+				6615B7452492222E006E2DE9 /* Info.plist */,
+				6615B73D2492222D006E2DE9 /* Comy_iOS.xcdatamodeld */,
+			);
+			path = "Comy-iOS";
+			sourceTree = "<group>";
+		};
+		6615B74D2492222E006E2DE9 /* Comy-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				6615B74E2492222E006E2DE9 /* Comy_iOSTests.swift */,
+				6615B7502492222E006E2DE9 /* Info.plist */,
+			);
+			path = "Comy-iOSTests";
+			sourceTree = "<group>";
+		};
+		6615B7582492222E006E2DE9 /* Comy-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6615B7592492222E006E2DE9 /* Comy_iOSUITests.swift */,
+				6615B75B2492222E006E2DE9 /* Info.plist */,
+			);
+			path = "Comy-iOSUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6615B7302492222D006E2DE9 /* Comy-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6615B75E2492222E006E2DE9 /* Build configuration list for PBXNativeTarget "Comy-iOS" */;
+			buildPhases = (
+				6615B72D2492222D006E2DE9 /* Sources */,
+				6615B72E2492222D006E2DE9 /* Frameworks */,
+				6615B72F2492222D006E2DE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Comy-iOS";
+			productName = "Comy-iOS";
+			productReference = 6615B7312492222D006E2DE9 /* Comy-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6615B7492492222E006E2DE9 /* Comy-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6615B7612492222E006E2DE9 /* Build configuration list for PBXNativeTarget "Comy-iOSTests" */;
+			buildPhases = (
+				6615B7462492222E006E2DE9 /* Sources */,
+				6615B7472492222E006E2DE9 /* Frameworks */,
+				6615B7482492222E006E2DE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6615B74C2492222E006E2DE9 /* PBXTargetDependency */,
+			);
+			name = "Comy-iOSTests";
+			productName = "Comy-iOSTests";
+			productReference = 6615B74A2492222E006E2DE9 /* Comy-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6615B7542492222E006E2DE9 /* Comy-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6615B7642492222E006E2DE9 /* Build configuration list for PBXNativeTarget "Comy-iOSUITests" */;
+			buildPhases = (
+				6615B7512492222E006E2DE9 /* Sources */,
+				6615B7522492222E006E2DE9 /* Frameworks */,
+				6615B7532492222E006E2DE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6615B7572492222E006E2DE9 /* PBXTargetDependency */,
+			);
+			name = "Comy-iOSUITests";
+			productName = "Comy-iOSUITests";
+			productReference = 6615B7552492222E006E2DE9 /* Comy-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6615B7292492222D006E2DE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = Quentin;
+				TargetAttributes = {
+					6615B7302492222D006E2DE9 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					6615B7492492222E006E2DE9 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 6615B7302492222D006E2DE9;
+					};
+					6615B7542492222E006E2DE9 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 6615B7302492222D006E2DE9;
+					};
+				};
+			};
+			buildConfigurationList = 6615B72C2492222D006E2DE9 /* Build configuration list for PBXProject "Comy-iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6615B7282492222D006E2DE9;
+			productRefGroup = 6615B7322492222D006E2DE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6615B7302492222D006E2DE9 /* Comy-iOS */,
+				6615B7492492222E006E2DE9 /* Comy-iOSTests */,
+				6615B7542492222E006E2DE9 /* Comy-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6615B72F2492222D006E2DE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6615B7442492222E006E2DE9 /* LaunchScreen.storyboard in Resources */,
+				6615B7412492222E006E2DE9 /* Assets.xcassets in Resources */,
+				6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6615B7482492222E006E2DE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6615B7532492222E006E2DE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6615B72D2492222D006E2DE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6615B7392492222D006E2DE9 /* ViewController.swift in Sources */,
+				6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */,
+				6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */,
+				6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6615B7462492222E006E2DE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6615B74F2492222E006E2DE9 /* Comy_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6615B7512492222E006E2DE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6615B75A2492222E006E2DE9 /* Comy_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6615B74C2492222E006E2DE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6615B7302492222D006E2DE9 /* Comy-iOS */;
+			targetProxy = 6615B74B2492222E006E2DE9 /* PBXContainerItemProxy */;
+		};
+		6615B7572492222E006E2DE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6615B7302492222D006E2DE9 /* Comy-iOS */;
+			targetProxy = 6615B7562492222E006E2DE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6615B73A2492222D006E2DE9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6615B73B2492222D006E2DE9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6615B7422492222E006E2DE9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6615B7432492222E006E2DE9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6615B75C2492222E006E2DE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6615B75D2492222E006E2DE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6615B75F2492222E006E2DE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S7A54AJQ72;
+				INFOPLIST_FILE = "Comy-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6615B7602492222E006E2DE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S7A54AJQ72;
+				INFOPLIST_FILE = "Comy-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6615B7622492222E006E2DE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S7A54AJQ72;
+				INFOPLIST_FILE = "Comy-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comy-iOS.app/Comy-iOS";
+			};
+			name = Debug;
+		};
+		6615B7632492222E006E2DE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S7A54AJQ72;
+				INFOPLIST_FILE = "Comy-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comy-iOS.app/Comy-iOS";
+			};
+			name = Release;
+		};
+		6615B7652492222E006E2DE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S7A54AJQ72;
+				INFOPLIST_FILE = "Comy-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Comy-iOS";
+			};
+			name = Debug;
+		};
+		6615B7662492222E006E2DE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S7A54AJQ72;
+				INFOPLIST_FILE = "Comy-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Comy-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6615B72C2492222D006E2DE9 /* Build configuration list for PBXProject "Comy-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6615B75C2492222E006E2DE9 /* Debug */,
+				6615B75D2492222E006E2DE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6615B75E2492222E006E2DE9 /* Build configuration list for PBXNativeTarget "Comy-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6615B75F2492222E006E2DE9 /* Debug */,
+				6615B7602492222E006E2DE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6615B7612492222E006E2DE9 /* Build configuration list for PBXNativeTarget "Comy-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6615B7622492222E006E2DE9 /* Debug */,
+				6615B7632492222E006E2DE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6615B7642492222E006E2DE9 /* Build configuration list for PBXNativeTarget "Comy-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6615B7652492222E006E2DE9 /* Debug */,
+				6615B7662492222E006E2DE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6615B73D2492222D006E2DE9 /* Comy_iOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6615B73E2492222D006E2DE9 /* Comy_iOS.xcdatamodel */,
+			);
+			currentVersion = 6615B73E2492222D006E2DE9 /* Comy_iOS.xcdatamodel */;
+			path = Comy_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6615B7292492222D006E2DE9 /* Project object */;
+}
