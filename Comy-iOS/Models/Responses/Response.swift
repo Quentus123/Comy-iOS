@@ -11,3 +11,8 @@ import Foundation
 protocol Response: Codable {
     var type: String { get }
 }
+
+enum ResponseType: String {
+    case ServerState = "ServerStateResponse"
+    case CommandResult = "CommandResult"
+}

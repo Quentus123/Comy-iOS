@@ -1,20 +1,40 @@
 PODS:
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxGesture (3.0.2):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
   - SkeletonView (1.8.7)
   - Starscream (4.0.3)
 
 DEPENDENCIES:
+  - RxCocoa (~> 5)
+  - RxGesture
+  - RxSwift (~> 5)
   - SkeletonView
   - Starscream (~> 4.0.0)
 
 SPEC REPOS:
   trunk:
+    - RxCocoa
+    - RxGesture
+    - RxRelay
+    - RxSwift
     - SkeletonView
     - Starscream
 
 SPEC CHECKSUMS:
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
   Starscream: ef06f0961fff0880bca0604416d61141e4faca67
 
-PODFILE CHECKSUM: ee22eba4d457c3265591ead48866fb1796af6c83
+PODFILE CHECKSUM: 6338ae0a039d52b21039d4a32f1c5a50bcc8d6b3
 
 COCOAPODS: 1.8.4

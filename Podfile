@@ -8,6 +8,9 @@ target 'Comy-iOS' do
   # Pods for Comy-iOS
   pod 'Starscream', '~> 4.0.0'
   pod "SkeletonView"
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  pod "RxGesture"
 
   target 'Comy-iOSTests' do
     inherit! :search_paths

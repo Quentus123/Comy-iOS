@@ -9,7 +9,7 @@
 import Foundation
 
 struct CommandResult: Response {
-    var type: String = "CommandResult"
+    let type: String
     let result: String
     let status: CommandResultStatus
 }

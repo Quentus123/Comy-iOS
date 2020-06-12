@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "07F3597F-47FA-4CCC-8FDD-6DEB9E967FBB"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EE398E1-C385-4639-B199-809BDE07C392"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comy-iOS/Server/CommandsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "didReceiveNewState(state:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B86886D-9F9F-4A06-B967-5AF2F2CEF50E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comy-iOS/Server/ServerCommandsController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBBC02FB-1BD3-4083-B05F-ABB3591BF9FD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comy-iOS/Server/ServerCommandsController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CBBC02FB-1BD3-4083-B05F-ABB3591BF9FD - d6bc40146cac9d34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Comy_iOS.ServerCommandsController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "Comy-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentin/Documents/Programmation/Comy-iOS/Comy-iOS/Server/ServerCommandsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "91">
+               </Location>
+               <Location
+                  uuid = "CBBC02FB-1BD3-4083-B05F-ABB3591BF9FD - 107e9de9b13dcade"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int, Comy_iOS.Command, __C.UITableViewCell) -&gt; () in Comy_iOS.ServerCommandsController.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "Comy-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentin/Documents/Programmation/Comy-iOS/Comy-iOS/Server/ServerCommandsController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "250">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

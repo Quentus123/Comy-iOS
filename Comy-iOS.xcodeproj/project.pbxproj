@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		25940474D18F82C45C938F61 /* Pods_Comy_iOS_Comy_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8B4311477D4174EA6B2FAC /* Pods_Comy_iOS_Comy_iOSUITests.framework */; };
+		660F160D2493D465006790BF /* ServerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F160C2493D465006790BF /* ServerServices.swift */; };
+		660F160F2493D913006790BF /* ServerStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F160E2493D913006790BF /* ServerStateResponse.swift */; };
+		660F16112493DB18006790BF /* CommandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F16102493DB18006790BF /* CommandsViewModel.swift */; };
 		6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7342492222D006E2DE9 /* AppDelegate.swift */; };
 		6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7362492222D006E2DE9 /* SceneDelegate.swift */; };
-		6615B7392492222D006E2DE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7382492222D006E2DE9 /* ViewController.swift */; };
 		6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6615B73A2492222D006E2DE9 /* Main.storyboard */; };
 		6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6615B73D2492222D006E2DE9 /* Comy_iOS.xcdatamodeld */; };
 		6615B7412492222E006E2DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6615B7402492222E006E2DE9 /* Assets.xcassets */; };
@@ -50,10 +52,12 @@
 		0A8B4311477D4174EA6B2FAC /* Pods_Comy_iOS_Comy_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOS_Comy_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0A58066BC0502D709AAADF /* Pods-Comy-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Comy-iOSTests/Pods-Comy-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		4B51128177CF500C4A12ADA0 /* Pods-Comy-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOS.release.xcconfig"; path = "Target Support Files/Pods-Comy-iOS/Pods-Comy-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		660F160C2493D465006790BF /* ServerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServices.swift; sourceTree = "<group>"; };
+		660F160E2493D913006790BF /* ServerStateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateResponse.swift; sourceTree = "<group>"; };
+		660F16102493DB18006790BF /* CommandsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsViewModel.swift; sourceTree = "<group>"; };
 		6615B7312492222D006E2DE9 /* Comy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6615B7342492222D006E2DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6615B7362492222D006E2DE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6615B7382492222D006E2DE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6615B73B2492222D006E2DE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6615B73E2492222D006E2DE9 /* Comy_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comy_iOS.xcdatamodel; sourceTree = "<group>"; };
 		6615B7402492222E006E2DE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,7 +152,6 @@
 				6615B76824922C87006E2DE9 /* Models */,
 				6615B7342492222D006E2DE9 /* AppDelegate.swift */,
 				6615B7362492222D006E2DE9 /* SceneDelegate.swift */,
-				6615B7382492222D006E2DE9 /* ViewController.swift */,
 				6615B73A2492222D006E2DE9 /* Main.storyboard */,
 				6615B7402492222E006E2DE9 /* Assets.xcassets */,
 				6615B7422492222E006E2DE9 /* LaunchScreen.storyboard */,
@@ -190,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				6615B76B24923017006E2DE9 /* ServerCommandsController.swift */,
+				660F160C2493D465006790BF /* ServerServices.swift */,
+				660F16102493DB18006790BF /* CommandsViewModel.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				6615B77C2492328D006E2DE9 /* Response.swift */,
 				6615B7702492308A006E2DE9 /* CommandResult.swift */,
 				6615B77224923093006E2DE9 /* CommandResultStatus.swift */,
+				660F160E2493D913006790BF /* ServerStateResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -476,11 +482,13 @@
 			files = (
 				6615B77324923093006E2DE9 /* CommandResultStatus.swift in Sources */,
 				6615B7782492314C006E2DE9 /* ExecuteCommandMessage.swift in Sources */,
-				6615B7392492222D006E2DE9 /* ViewController.swift in Sources */,
 				6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */,
 				6615B77D2492328D006E2DE9 /* Response.swift in Sources */,
 				6615B7762492311D006E2DE9 /* Message.swift in Sources */,
 				6615B77A2492322A006E2DE9 /* NeedStateMessage.swift in Sources */,
+				660F160F2493D913006790BF /* ServerStateResponse.swift in Sources */,
+				660F160D2493D465006790BF /* ServerServices.swift in Sources */,
+				660F16112493DB18006790BF /* CommandsViewModel.swift in Sources */,
 				6615B76C24923017006E2DE9 /* ServerCommandsController.swift in Sources */,
 				6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */,
 				6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */,
@@ -662,6 +670,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7A54AJQ72;
 				INFOPLIST_FILE = "Comy-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,6 +690,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7A54AJQ72;
 				INFOPLIST_FILE = "Comy-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

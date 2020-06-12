@@ -1,3 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-Comy-iOS-Comy-iOSUITests/Pods-Comy-iOS-Comy-iOSUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework
+${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework
 ${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework
