@@ -9,7 +9,7 @@
 import Foundation
 import Starscream
 
-class ServerServices: WebSocketDelegate {
+class ServerServices {
     
     private var socket: WebSocket
     weak var delegate: ServerServicesDelegate?
@@ -30,6 +30,10 @@ class ServerServices: WebSocketDelegate {
     func executeCommand(command: Command) {
         socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name)), encoding: .utf8)!)
     }
+    
+}
+
+extension ServerServices: WebSocketDelegate {
     
     func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {

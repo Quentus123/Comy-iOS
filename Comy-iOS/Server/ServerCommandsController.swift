@@ -21,7 +21,7 @@ class ServerCommandsController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var request = URLRequest(url: URL(string: "ws://localhost:12478")!)
+        var request = URLRequest(url: URL(string: "ws://192.168.1.25:12479")!)
         request.timeoutInterval = 5
         commandsViewModel = CommandsViewModel(request: request)
         testTableView.register(UITableViewCell.self, forCellReuseIdentifier: "TestCell")

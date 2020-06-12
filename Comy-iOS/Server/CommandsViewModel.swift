@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class CommandsViewModel: ServerServicesDelegate {
+class CommandsViewModel {
     
     var commands: BehaviorSubject<[Command]> = BehaviorSubject(value: [])
     let commandResult: PublishSubject<CommandResult> = PublishSubject()
@@ -20,6 +20,10 @@ class CommandsViewModel: ServerServicesDelegate {
         services.delegate = self
         services.connect()
     }
+    
+}
+
+extension CommandsViewModel: ServerServicesDelegate {
     
     func didReceiveNewState(state: [Command]) {
         commands.onNext(state)
