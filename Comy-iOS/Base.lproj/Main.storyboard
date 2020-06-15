@@ -15,27 +15,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-El-hGI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdB-ES-b6a">
+                                <rect key="frame" x="0.0" y="44" width="414" height="82"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="lqh-V7-kkc">
+                                        <rect key="frame" x="175" y="26" width="64" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-hr-4mQ">
+                                        <rect key="frame" x="20" y="20.5" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NTt-hr-4mQ" secondAttribute="height" id="CCE-sQ-TC1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" image="power" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="semibold">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="NTt-hr-4mQ" firstAttribute="height" secondItem="UdB-ES-b6a" secondAttribute="height" multiplier="0.5" id="4jm-h2-gdG"/>
+                                    <constraint firstItem="lqh-V7-kkc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NTt-hr-4mQ" secondAttribute="trailing" constant="10" id="JN5-Du-Vxi"/>
+                                    <constraint firstItem="lqh-V7-kkc" firstAttribute="centerX" secondItem="UdB-ES-b6a" secondAttribute="centerX" id="UhG-6z-1uc"/>
+                                    <constraint firstItem="lqh-V7-kkc" firstAttribute="centerY" secondItem="UdB-ES-b6a" secondAttribute="centerY" id="YzU-Jz-PyK"/>
+                                    <constraint firstItem="NTt-hr-4mQ" firstAttribute="leading" secondItem="UdB-ES-b6a" secondAttribute="leading" constant="20" id="ZoY-eb-ejR"/>
+                                    <constraint firstItem="NTt-hr-4mQ" firstAttribute="centerY" secondItem="UdB-ES-b6a" secondAttribute="centerY" id="cys-gr-lBW"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-El-hGI">
+                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not connected to server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-OG-i1B">
+                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zUi-El-hGI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Liq-DV-ghA"/>
+                            <constraint firstItem="XMM-OG-i1B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CSt-gK-VrF"/>
+                            <constraint firstItem="UdB-ES-b6a" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="H58-5z-mKw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UdB-ES-b6a" secondAttribute="trailing" id="Ir3-Hh-tKN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zUi-El-hGI" secondAttribute="bottom" id="PRs-TR-suM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XMM-OG-i1B" secondAttribute="trailing" id="ROq-fn-h0B"/>
+                            <constraint firstItem="UdB-ES-b6a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TCY-72-6p6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XMM-OG-i1B" secondAttribute="bottom" id="Vhp-p9-yXf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zUi-El-hGI" secondAttribute="trailing" id="daP-6U-ucT"/>
+                            <constraint firstItem="XMM-OG-i1B" firstAttribute="top" secondItem="UdB-ES-b6a" secondAttribute="bottom" id="f1J-QN-5NS"/>
+                            <constraint firstItem="zUi-El-hGI" firstAttribute="top" secondItem="UdB-ES-b6a" secondAttribute="bottom" id="med-qy-UYI"/>
                             <constraint firstItem="zUi-El-hGI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n2j-mg-djG"/>
+                            <constraint firstItem="UdB-ES-b6a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="orD-rl-Qdu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="testTableView" destination="zUi-El-hGI" id="rqS-Ro-Zdd"/>
+                        <outlet property="commandsTableView" destination="zUi-El-hGI" id="rqS-Ro-Zdd"/>
+                        <outlet property="nameServerLabel" destination="lqh-V7-kkc" id="VD1-EQ-kFM"/>
+                        <outlet property="notConnectedLabel" destination="XMM-OG-i1B" id="Br8-iH-frb"/>
+                        <outlet property="shutdownButton" destination="NTt-hr-4mQ" id="dMJ-EP-ZAE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="139"/>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="power" catalog="system" width="128" height="124"/>
+    </resources>
 </document>

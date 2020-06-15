@@ -10,5 +10,6 @@ import Foundation
 
 struct ServerStateResponse: Response{
     let type: String
-    let state: [Command]
+    let name: String
+    let commands: [Command]
 }

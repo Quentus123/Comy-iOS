@@ -40,11 +40,15 @@ extension ServerServices: WebSocketDelegate {
         case .text(let stringEvent):
             if let dataEvent = stringEvent.data(using: .utf8){
                 if let serverStateResponse = try? JSONDecoder().decode(ServerStateResponse.self, from: dataEvent){
-                    delegate?.didReceiveNewState(state: serverStateResponse.state)
+                    delegate?.didReceiveNewState(state: serverStateResponse)
                 } else if let commandResult = try? JSONDecoder().decode(CommandResult.self, from: dataEvent){
                     delegate?.didReceiveCommandResult(result: commandResult)
                 }
             }
+        case .connected(_):
+            delegate?.onConnected()
+        case .disconnected(let reason, let code):
+            delegate?.onDisconnected(reason: reason, code: code)
         default:
             return
         }
@@ -53,6 +57,8 @@ extension ServerServices: WebSocketDelegate {
 }
 
 protocol ServerServicesDelegate: class {
-    func didReceiveNewState(state: [Command])
+    func onConnected()
+    func onDisconnected(reason: String, code: UInt16)
+    func didReceiveNewState(state: ServerStateResponse)
     func didReceiveCommandResult(result: CommandResult)
 }

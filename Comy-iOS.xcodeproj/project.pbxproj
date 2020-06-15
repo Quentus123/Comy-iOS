@@ -10,7 +10,7 @@
 		25940474D18F82C45C938F61 /* Pods_Comy_iOS_Comy_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8B4311477D4174EA6B2FAC /* Pods_Comy_iOS_Comy_iOSUITests.framework */; };
 		660F160D2493D465006790BF /* ServerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F160C2493D465006790BF /* ServerServices.swift */; };
 		660F160F2493D913006790BF /* ServerStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F160E2493D913006790BF /* ServerStateResponse.swift */; };
-		660F16112493DB18006790BF /* CommandsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F16102493DB18006790BF /* CommandsViewModel.swift */; };
+		660F16112493DB18006790BF /* ServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F16102493DB18006790BF /* ServerViewModel.swift */; };
 		6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7342492222D006E2DE9 /* AppDelegate.swift */; };
 		6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7362492222D006E2DE9 /* SceneDelegate.swift */; };
 		6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6615B73A2492222D006E2DE9 /* Main.storyboard */; };
@@ -27,6 +27,8 @@
 		6615B7782492314C006E2DE9 /* ExecuteCommandMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7772492314C006E2DE9 /* ExecuteCommandMessage.swift */; };
 		6615B77A2492322A006E2DE9 /* NeedStateMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7792492322A006E2DE9 /* NeedStateMessage.swift */; };
 		6615B77D2492328D006E2DE9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B77C2492328D006E2DE9 /* Response.swift */; };
+		6642203F24976DDD00CD67D8 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6642203E24976DDD00CD67D8 /* CommandCell.xib */; };
+		6642204124976E6B00CD67D8 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642204024976E6B00CD67D8 /* CommandCell.swift */; };
 		A717272C7577C392AE26B756 /* Pods_Comy_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A17DF704DDB833988D17555 /* Pods_Comy_iOS.framework */; };
 		CCB5A842222BA848E4A30D3D /* Pods_Comy_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7512FA05FC630A457D8718CA /* Pods_Comy_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,7 +56,7 @@
 		4B51128177CF500C4A12ADA0 /* Pods-Comy-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOS.release.xcconfig"; path = "Target Support Files/Pods-Comy-iOS/Pods-Comy-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		660F160C2493D465006790BF /* ServerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServices.swift; sourceTree = "<group>"; };
 		660F160E2493D913006790BF /* ServerStateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateResponse.swift; sourceTree = "<group>"; };
-		660F16102493DB18006790BF /* CommandsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsViewModel.swift; sourceTree = "<group>"; };
+		660F16102493DB18006790BF /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
 		6615B7312492222D006E2DE9 /* Comy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6615B7342492222D006E2DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6615B7362492222D006E2DE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		6615B7772492314C006E2DE9 /* ExecuteCommandMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteCommandMessage.swift; sourceTree = "<group>"; };
 		6615B7792492322A006E2DE9 /* NeedStateMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedStateMessage.swift; sourceTree = "<group>"; };
 		6615B77C2492328D006E2DE9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		6642203E24976DDD00CD67D8 /* CommandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
+		6642204024976E6B00CD67D8 /* CommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
 		6A17DF704DDB833988D17555 /* Pods_Comy_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7315928DE9C84BE2AC521E22 /* Pods-Comy-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Comy-iOSTests/Pods-Comy-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7512FA05FC630A457D8718CA /* Pods_Comy_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,9 +196,9 @@
 		6615B76A24922FDF006E2DE9 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				6615B76B24923017006E2DE9 /* ServerCommandsController.swift */,
-				660F160C2493D465006790BF /* ServerServices.swift */,
-				660F16102493DB18006790BF /* CommandsViewModel.swift */,
+				6642203D24976D8000CD67D8 /* ViewModels */,
+				6642203C24976D7A00CD67D8 /* Views */,
+				6642203B24976D7100CD67D8 /* Controllers */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -226,6 +230,32 @@
 				660F160E2493D913006790BF /* ServerStateResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		6642203B24976D7100CD67D8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6615B76B24923017006E2DE9 /* ServerCommandsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6642203C24976D7A00CD67D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6642203E24976DDD00CD67D8 /* CommandCell.xib */,
+				6642204024976E6B00CD67D8 /* CommandCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6642203D24976D8000CD67D8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				660F16102493DB18006790BF /* ServerViewModel.swift */,
+				660F160C2493D465006790BF /* ServerServices.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		88D81C6C5CBF75AD446C6567 /* Pods */ = {
@@ -353,6 +383,7 @@
 				6615B7442492222E006E2DE9 /* LaunchScreen.storyboard in Resources */,
 				6615B7412492222E006E2DE9 /* Assets.xcassets in Resources */,
 				6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */,
+				6642203F24976DDD00CD67D8 /* CommandCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,8 +519,9 @@
 				6615B77A2492322A006E2DE9 /* NeedStateMessage.swift in Sources */,
 				660F160F2493D913006790BF /* ServerStateResponse.swift in Sources */,
 				660F160D2493D465006790BF /* ServerServices.swift in Sources */,
-				660F16112493DB18006790BF /* CommandsViewModel.swift in Sources */,
+				660F16112493DB18006790BF /* ServerViewModel.swift in Sources */,
 				6615B76C24923017006E2DE9 /* ServerCommandsController.swift in Sources */,
+				6642204124976E6B00CD67D8 /* CommandCell.swift in Sources */,
 				6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */,
 				6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */,
 				6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */,
