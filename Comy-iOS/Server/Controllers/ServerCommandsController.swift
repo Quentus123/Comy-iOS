@@ -31,6 +31,9 @@ class ServerCommandsController: UIViewController{
         commandsTableView.rx.setDelegate(self)
         
         serverViewModel.serverName.bind(to: nameServerLabel.rx.text).disposed(by: disposeBag)
+        
+        //temporary
+        serverViewModel.isConnected.bind(to: shutdownButton.rx.isHidden.mapObserver({!$0})).disposed(by: disposeBag)
         serverViewModel.isConnected.bind(to: notConnectedLabel.rx.isHidden).disposed(by: disposeBag)
         
         serverViewModel.commandResult
