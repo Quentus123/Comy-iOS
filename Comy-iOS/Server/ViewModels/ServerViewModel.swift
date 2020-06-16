@@ -24,6 +24,10 @@ class ServerViewModel {
         services.connect()
     }
     
+    func disconnect() {
+        services.disconnect()
+    }
+    
 }
 
 extension ServerViewModel: ServerServicesDelegate {

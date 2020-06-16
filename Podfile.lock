@@ -16,7 +16,7 @@ DEPENDENCIES:
   - RxGesture
   - RxSwift (~> 5)
   - SkeletonView
-  - Starscream (~> 4.0.0)
+  - Starscream (~> 4.0.3)
 
 SPEC REPOS:
   trunk:
@@ -35,6 +35,6 @@ SPEC CHECKSUMS:
   SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
   Starscream: ef06f0961fff0880bca0604416d61141e4faca67
 
-PODFILE CHECKSUM: 6338ae0a039d52b21039d4a32f1c5a50bcc8d6b3
+PODFILE CHECKSUM: cb81bdc000fad31d4ca87cb260c14777ef0c9b1f
 
 COCOAPODS: 1.8.4

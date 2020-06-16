@@ -11,6 +11,7 @@
 		660F160D2493D465006790BF /* ServerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F160C2493D465006790BF /* ServerServices.swift */; };
 		660F160F2493D913006790BF /* ServerStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F160E2493D913006790BF /* ServerStateResponse.swift */; };
 		660F16112493DB18006790BF /* ServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F16102493DB18006790BF /* ServerViewModel.swift */; };
+		661186DB249898FE001BA0AF /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661186DA249898FE001BA0AF /* OnboardingController.swift */; };
 		6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7342492222D006E2DE9 /* AppDelegate.swift */; };
 		6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7362492222D006E2DE9 /* SceneDelegate.swift */; };
 		6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6615B73A2492222D006E2DE9 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		660F160C2493D465006790BF /* ServerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServices.swift; sourceTree = "<group>"; };
 		660F160E2493D913006790BF /* ServerStateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateResponse.swift; sourceTree = "<group>"; };
 		660F16102493DB18006790BF /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
+		661186DA249898FE001BA0AF /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		6615B7312492222D006E2DE9 /* Comy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6615B7342492222D006E2DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6615B7362492222D006E2DE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		661186D8249898C8001BA0AF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				661186D9249898EA001BA0AF /* Controllers */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		661186D9249898EA001BA0AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				661186DA249898FE001BA0AF /* OnboardingController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		6615B7282492222D006E2DE9 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +170,7 @@
 		6615B7332492222D006E2DE9 /* Comy-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				661186D8249898C8001BA0AF /* Onboarding */,
 				6615B76A24922FDF006E2DE9 /* Server */,
 				6615B76824922C87006E2DE9 /* Models */,
 				6615B7342492222D006E2DE9 /* AppDelegate.swift */,
@@ -523,6 +542,7 @@
 				6615B76C24923017006E2DE9 /* ServerCommandsController.swift in Sources */,
 				6642204124976E6B00CD67D8 /* CommandCell.swift in Sources */,
 				6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */,
+				661186DB249898FE001BA0AF /* OnboardingController.swift in Sources */,
 				6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */,
 				6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */,
 				6615B76F2492305E006E2DE9 /* Command.swift in Sources */,

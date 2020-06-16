@@ -17,24 +17,34 @@ class ServerCommandsController: UIViewController{
     @IBOutlet weak var commandsTableView: UITableView!
     @IBOutlet weak var shutdownButton: UIButton!
     @IBOutlet weak var nameServerLabel: UILabel!
-    @IBOutlet weak var notConnectedLabel: UILabel!
     
-    private var serverViewModel: ServerViewModel!
+    var serverViewModel: ServerViewModel!
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var request = URLRequest(url: URL(string: "ws://localhost:12478")!)
-        request.timeoutInterval = 5
-        serverViewModel = ServerViewModel(request: request)
         commandsTableView.register(CommandCell.self, forCellReuseIdentifier: "CommandCell")
-        commandsTableView.rx.setDelegate(self)
+        commandsTableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         serverViewModel.serverName.bind(to: nameServerLabel.rx.text).disposed(by: disposeBag)
         
-        //temporary
-        serverViewModel.isConnected.bind(to: shutdownButton.rx.isHidden.mapObserver({!$0})).disposed(by: disposeBag)
-        serverViewModel.isConnected.bind(to: notConnectedLabel.rx.isHidden).disposed(by: disposeBag)
+        self.shutdownButton
+            .rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.serverViewModel.disconnect()
+            })
+            .disposed(by: disposeBag)
+        
+        serverViewModel.isConnected
+            .filter({!$0})
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.dismiss(animated: true)
+            })
+            .disposed(by: disposeBag)
         
         serverViewModel.commandResult
             .subscribe(onNext: { [weak self] (result) in
@@ -72,7 +82,8 @@ class ServerCommandsController: UIViewController{
                 .rx
                 .tapGesture()
                 .when(.recognized)
-                .subscribe(onNext: { _ in
+                .subscribe(onNext: { [weak self] _ in
+                    guard let self = self else { return }
                     self.serverViewModel.services.executeCommand(command: item)
                 })
                 .disposed(by: self.disposeBag)

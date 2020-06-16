@@ -23,6 +23,10 @@ class ServerServices {
         socket.connect()
     }
     
+    func disconnect() {
+        socket.disconnect()
+    }
+    
     func refreshState() {
         socket.write(string: String(data: try! JSONEncoder().encode(NeedStateMessage()), encoding: .utf8)!)
     }
@@ -36,6 +40,7 @@ class ServerServices {
 extension ServerServices: WebSocketDelegate {
     
     func didReceive(event: WebSocketEvent, client: WebSocket) {
+        print(event)
         switch event {
         case .text(let stringEvent):
             if let dataEvent = stringEvent.data(using: .utf8){
@@ -49,6 +54,8 @@ extension ServerServices: WebSocketDelegate {
             delegate?.onConnected()
         case .disconnected(let reason, let code):
             delegate?.onDisconnected(reason: reason, code: code)
+        case .cancelled:
+            delegate?.onDisconnected(reason: "Cancelled", code: 200)
         default:
             return
         }

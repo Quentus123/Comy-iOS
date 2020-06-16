@@ -6,7 +6,7 @@ target 'Comy-iOS' do
   use_frameworks!
 
   # Pods for Comy-iOS
-  pod 'Starscream', '~> 4.0.0'
+  pod 'Starscream', '~> 4.0.3'
   pod "SkeletonView"
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oYS-vL-Z48">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,10 +7,65 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Onboarding Controller-->
+        <scene sceneID="Jlk-1K-OMe">
+            <objects>
+                <viewController id="oYS-vL-Z48" customClass="OnboardingController" customModule="Comy_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="crD-gt-hKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LpA-oD-Ez7">
+                                <rect key="frame" x="124" y="64" width="166" height="165.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LpA-oD-Ez7" secondAttribute="height" id="28S-GQ-Fyf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwi-wx-6w3">
+                                <rect key="frame" x="103" y="279.5" width="208.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://server.url:port" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaq-qE-Q2V">
+                                <rect key="frame" x="83" y="323.5" width="248" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5g-sm-wSo">
+                                <rect key="frame" x="177.5" y="372.5" width="59" height="30"/>
+                                <state key="normal" title="Connect"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LpA-oD-Ez7" firstAttribute="top" secondItem="ao8-GU-dPf" secondAttribute="top" constant="20" id="6Ho-zq-Frb"/>
+                            <constraint firstItem="LpA-oD-Ez7" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="O5H-ec-YZM"/>
+                            <constraint firstItem="Hwi-wx-6w3" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="OmO-Ia-GLp"/>
+                            <constraint firstItem="p5g-sm-wSo" firstAttribute="top" secondItem="jaq-qE-Q2V" secondAttribute="bottom" constant="15" id="PhN-1l-58C"/>
+                            <constraint firstItem="jaq-qE-Q2V" firstAttribute="width" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.6" id="cEU-OD-ejo"/>
+                            <constraint firstItem="jaq-qE-Q2V" firstAttribute="top" secondItem="Hwi-wx-6w3" secondAttribute="bottom" constant="15" id="dsA-tn-Gah"/>
+                            <constraint firstItem="Hwi-wx-6w3" firstAttribute="width" relation="lessThanOrEqual" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.9" id="hFa-AB-3iz"/>
+                            <constraint firstItem="LpA-oD-Ez7" firstAttribute="width" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.4" id="jIm-F6-T0r"/>
+                            <constraint firstItem="p5g-sm-wSo" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="lQq-ql-awg"/>
+                            <constraint firstItem="jaq-qE-Q2V" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="p9j-Kq-X8r"/>
+                            <constraint firstItem="Hwi-wx-6w3" firstAttribute="top" secondItem="LpA-oD-Ez7" secondAttribute="bottom" constant="50" id="uyw-Kq-M3c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ao8-GU-dPf"/>
+                    </view>
+                    <connections>
+                        <outlet property="connectButton" destination="p5g-sm-wSo" id="XcW-ot-1Mx"/>
+                        <outlet property="urlTextField" destination="jaq-qE-Q2V" id="5OI-Kb-Amx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mK6-ot-qWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1119" y="139"/>
+        </scene>
         <!--Server Commands Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ServerCommandsController" customModule="Comy_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServerCommandsController" id="BYZ-38-t0r" customClass="ServerCommandsController" customModule="Comy_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,24 +106,14 @@
                                 <rect key="frame" x="0.0" y="126" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not connected to server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-OG-i1B">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XMM-OG-i1B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CSt-gK-VrF"/>
                             <constraint firstItem="UdB-ES-b6a" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="H58-5z-mKw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UdB-ES-b6a" secondAttribute="trailing" id="Ir3-Hh-tKN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zUi-El-hGI" secondAttribute="bottom" id="PRs-TR-suM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XMM-OG-i1B" secondAttribute="trailing" id="ROq-fn-h0B"/>
                             <constraint firstItem="UdB-ES-b6a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TCY-72-6p6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XMM-OG-i1B" secondAttribute="bottom" id="Vhp-p9-yXf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zUi-El-hGI" secondAttribute="trailing" id="daP-6U-ucT"/>
-                            <constraint firstItem="XMM-OG-i1B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="f1J-QN-5NS"/>
                             <constraint firstItem="zUi-El-hGI" firstAttribute="top" secondItem="UdB-ES-b6a" secondAttribute="bottom" id="med-qy-UYI"/>
                             <constraint firstItem="zUi-El-hGI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n2j-mg-djG"/>
                             <constraint firstItem="UdB-ES-b6a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="orD-rl-Qdu"/>
@@ -78,7 +123,6 @@
                     <connections>
                         <outlet property="commandsTableView" destination="zUi-El-hGI" id="rqS-Ro-Zdd"/>
                         <outlet property="nameServerLabel" destination="lqh-V7-kkc" id="VD1-EQ-kFM"/>
-                        <outlet property="notConnectedLabel" destination="XMM-OG-i1B" id="Br8-iH-frb"/>
                         <outlet property="shutdownButton" destination="NTt-hr-4mQ" id="dMJ-EP-ZAE"/>
                     </connections>
                 </viewController>
