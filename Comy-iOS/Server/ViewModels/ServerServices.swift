@@ -46,8 +46,8 @@ extension ServerServices: WebSocketDelegate {
             if let dataEvent = stringEvent.data(using: .utf8){
                 if let serverStateResponse = try? JSONDecoder().decode(ServerStateResponse.self, from: dataEvent){
                     delegate?.didReceiveNewState(state: serverStateResponse)
-                } else if let commandResult = try? JSONDecoder().decode(CommandResult.self, from: dataEvent){
-                    delegate?.didReceiveCommandResult(result: commandResult)
+                } else if let commandResponse = try? JSONDecoder().decode(CommandResponse.self, from: dataEvent){
+                    delegate?.didReceiveCommandResult(response: commandResponse)
                 }
             }
         case .connected(_):
@@ -67,5 +67,5 @@ protocol ServerServicesDelegate: class {
     func onConnected()
     func onDisconnected(reason: String, code: UInt16)
     func didReceiveNewState(state: ServerStateResponse)
-    func didReceiveCommandResult(result: CommandResult)
+    func didReceiveCommandResult(response: CommandResponse)
 }

@@ -18,8 +18,6 @@
 		6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6615B73D2492222D006E2DE9 /* Comy_iOS.xcdatamodeld */; };
 		6615B7412492222E006E2DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6615B7402492222E006E2DE9 /* Assets.xcassets */; };
 		6615B7442492222E006E2DE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6615B7422492222E006E2DE9 /* LaunchScreen.storyboard */; };
-		6615B74F2492222E006E2DE9 /* Comy_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B74E2492222E006E2DE9 /* Comy_iOSTests.swift */; };
-		6615B75A2492222E006E2DE9 /* Comy_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7592492222E006E2DE9 /* Comy_iOSUITests.swift */; };
 		6615B76C24923017006E2DE9 /* ServerCommandsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B76B24923017006E2DE9 /* ServerCommandsController.swift */; };
 		6615B76F2492305E006E2DE9 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B76E2492305E006E2DE9 /* Command.swift */; };
 		6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B7702492308A006E2DE9 /* CommandResult.swift */; };
@@ -30,6 +28,10 @@
 		6615B77D2492328D006E2DE9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B77C2492328D006E2DE9 /* Response.swift */; };
 		6642203F24976DDD00CD67D8 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6642203E24976DDD00CD67D8 /* CommandCell.xib */; };
 		6642204124976E6B00CD67D8 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642204024976E6B00CD67D8 /* CommandCell.swift */; };
+		66E7108A2498F4EC0022D9EA /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E710892498F4EC0022D9EA /* NotificationView.xib */; };
+		66E7108C2498F6990022D9EA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108B2498F6990022D9EA /* NotificationView.swift */; };
+		66E7108E249904BA0022D9EA /* CommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108D249904BA0022D9EA /* CommandResponse.swift */; };
+		66E71094249917FE0022D9EA /* ServerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71093249917FE0022D9EA /* ServerViewModelTest.swift */; };
 		A717272C7577C392AE26B756 /* Pods_Comy_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A17DF704DDB833988D17555 /* Pods_Comy_iOS.framework */; };
 		CCB5A842222BA848E4A30D3D /* Pods_Comy_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7512FA05FC630A457D8718CA /* Pods_Comy_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -68,10 +70,8 @@
 		6615B7432492222E006E2DE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6615B7452492222E006E2DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6615B74A2492222E006E2DE9 /* Comy-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comy-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6615B74E2492222E006E2DE9 /* Comy_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comy_iOSTests.swift; sourceTree = "<group>"; };
 		6615B7502492222E006E2DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6615B7552492222E006E2DE9 /* Comy-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comy-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6615B7592492222E006E2DE9 /* Comy_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comy_iOSUITests.swift; sourceTree = "<group>"; };
 		6615B75B2492222E006E2DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6615B76B24923017006E2DE9 /* ServerCommandsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommandsController.swift; sourceTree = "<group>"; };
 		6615B76E2492305E006E2DE9 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
@@ -83,6 +83,10 @@
 		6615B77C2492328D006E2DE9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		6642203E24976DDD00CD67D8 /* CommandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
 		6642204024976E6B00CD67D8 /* CommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
+		66E710892498F4EC0022D9EA /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
+		66E7108B2498F6990022D9EA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		66E7108D249904BA0022D9EA /* CommandResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandResponse.swift; sourceTree = "<group>"; };
+		66E71093249917FE0022D9EA /* ServerViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModelTest.swift; sourceTree = "<group>"; };
 		6A17DF704DDB833988D17555 /* Pods_Comy_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7315928DE9C84BE2AC521E22 /* Pods-Comy-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Comy-iOSTests/Pods-Comy-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7512FA05FC630A457D8718CA /* Pods_Comy_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +177,7 @@
 				661186D8249898C8001BA0AF /* Onboarding */,
 				6615B76A24922FDF006E2DE9 /* Server */,
 				6615B76824922C87006E2DE9 /* Models */,
+				66E710872498F4B30022D9EA /* Tools */,
 				6615B7342492222D006E2DE9 /* AppDelegate.swift */,
 				6615B7362492222D006E2DE9 /* SceneDelegate.swift */,
 				6615B73A2492222D006E2DE9 /* Main.storyboard */,
@@ -187,7 +192,7 @@
 		6615B74D2492222E006E2DE9 /* Comy-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				6615B74E2492222E006E2DE9 /* Comy_iOSTests.swift */,
+				66E7108F249917650022D9EA /* Server */,
 				6615B7502492222E006E2DE9 /* Info.plist */,
 			);
 			path = "Comy-iOSTests";
@@ -196,7 +201,6 @@
 		6615B7582492222E006E2DE9 /* Comy-iOSUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6615B7592492222E006E2DE9 /* Comy_iOSUITests.swift */,
 				6615B75B2492222E006E2DE9 /* Info.plist */,
 			);
 			path = "Comy-iOSUITests";
@@ -244,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				6615B77C2492328D006E2DE9 /* Response.swift */,
+				66E7108D249904BA0022D9EA /* CommandResponse.swift */,
 				6615B7702492308A006E2DE9 /* CommandResult.swift */,
 				6615B77224923093006E2DE9 /* CommandResultStatus.swift */,
 				660F160E2493D913006790BF /* ServerStateResponse.swift */,
@@ -273,6 +278,39 @@
 			children = (
 				660F16102493DB18006790BF /* ServerViewModel.swift */,
 				660F160C2493D465006790BF /* ServerServices.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		66E710872498F4B30022D9EA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				66E710882498F4C70022D9EA /* Views */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		66E710882498F4C70022D9EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66E710892498F4EC0022D9EA /* NotificationView.xib */,
+				66E7108B2498F6990022D9EA /* NotificationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66E7108F249917650022D9EA /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				66E710902499176B0022D9EA /* ViewModels */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		66E710902499176B0022D9EA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				66E71093249917FE0022D9EA /* ServerViewModelTest.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -403,6 +441,7 @@
 				6615B7412492222E006E2DE9 /* Assets.xcassets in Resources */,
 				6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */,
 				6642203F24976DDD00CD67D8 /* CommandCell.xib in Resources */,
+				66E7108A2498F4EC0022D9EA /* NotificationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +575,9 @@
 				6615B77D2492328D006E2DE9 /* Response.swift in Sources */,
 				6615B7762492311D006E2DE9 /* Message.swift in Sources */,
 				6615B77A2492322A006E2DE9 /* NeedStateMessage.swift in Sources */,
+				66E7108C2498F6990022D9EA /* NotificationView.swift in Sources */,
 				660F160F2493D913006790BF /* ServerStateResponse.swift in Sources */,
+				66E7108E249904BA0022D9EA /* CommandResponse.swift in Sources */,
 				660F160D2493D465006790BF /* ServerServices.swift in Sources */,
 				660F16112493DB18006790BF /* ServerViewModel.swift in Sources */,
 				6615B76C24923017006E2DE9 /* ServerCommandsController.swift in Sources */,
@@ -553,7 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6615B74F2492222E006E2DE9 /* Comy_iOSTests.swift in Sources */,
+				66E71094249917FE0022D9EA /* ServerViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +602,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6615B75A2492222E006E2DE9 /* Comy_iOSUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

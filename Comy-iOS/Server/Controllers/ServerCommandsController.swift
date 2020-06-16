@@ -17,16 +17,44 @@ class ServerCommandsController: UIViewController{
     @IBOutlet weak var commandsTableView: UITableView!
     @IBOutlet weak var shutdownButton: UIButton!
     @IBOutlet weak var nameServerLabel: UILabel!
+    @IBOutlet weak var notificationView: NotificationView!
+    
+    private var baseNotificationViewBottomConstraintConstant: CGFloat!
+    private var timerHideNotification: Timer?
     
     var serverViewModel: ServerViewModel!
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        baseNotificationViewBottomConstraintConstant = view.constraints.filter({$0.firstAnchor == notificationView.bottomAnchor}).first!.constant
+        hideNotificationView()
+        notificationView.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.hideNotificationView()
+            })
+            .disposed(by: disposeBag)
+        
         commandsTableView.register(CommandCell.self, forCellReuseIdentifier: "CommandCell")
         commandsTableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         serverViewModel.serverName.bind(to: nameServerLabel.rx.text).disposed(by: disposeBag)
+        
+        serverViewModel.commandsLoading
+            .subscribe(onNext: { [weak self] commands in
+                guard let self = self else { return }
+                for cell in self.commandsTableView.visibleCells {
+                    guard let cell = cell as? CommandCell else { return }
+                    UIView.animate(withDuration: 0.1) {
+                        cell.mainContainer.alpha = commands.contains(cell.nameLabel.text!) ? 0.5 : 1
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
         
         self.shutdownButton
             .rx
@@ -46,16 +74,17 @@ class ServerCommandsController: UIViewController{
             })
             .disposed(by: disposeBag)
         
-        serverViewModel.commandResult
-            .subscribe(onNext: { [weak self] (result) in
+        serverViewModel.commandResponse
+            .subscribe(onNext: { [weak self] (response) in
                 guard let self = self else { return }
-                if result.status.success {
-                    let message = result.result.count > 0 ? result.result : nil
-                    let successAlert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+                if response.result.status.success && response.result.message.count > 0 {
+                    let successAlert = UIAlertController(title: "Success", message: response.result.message, preferredStyle: .alert)
                     successAlert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(successAlert, animated: true)
+                } else if response.result.status.success && response.result.message.count == 0{
+                    self.showNotificationView()
                 } else {
-                    let errorAlert = UIAlertController(title: "Error", message: result.status.message, preferredStyle: .alert)
+                    let errorAlert = UIAlertController(title: "Error", message: response.result.status.message, preferredStyle: .alert)
                     errorAlert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(errorAlert, animated: true)
                 }
@@ -84,7 +113,8 @@ class ServerCommandsController: UIViewController{
                 .when(.recognized)
                 .subscribe(onNext: { [weak self] _ in
                     guard let self = self else { return }
-                    self.serverViewModel.services.executeCommand(command: item)
+                    self.hideNotificationView()
+                    self.serverViewModel.executeCommand(command: item)
                 })
                 .disposed(by: self.disposeBag)
             cell
@@ -110,6 +140,49 @@ class ServerCommandsController: UIViewController{
                 })
                 .disposed(by: self.disposeBag)
         }.disposed(by: disposeBag)
+    }
+    
+    private func hideNotificationView() {
+        let oldBottomConstraint = self.view.constraints.filter({$0.firstAnchor == notificationView.bottomAnchor}).first!
+        guard oldBottomConstraint.constant < 0 else { return }
+        let newBottomConstraint = NSLayoutConstraint(item: notificationView as Any,
+                                                     attribute: .bottom,
+                                                     relatedBy: .equal,
+                                                     toItem: view,
+                                                     attribute: .bottom,
+                                                     multiplier: 1,
+                                                     constant: -oldBottomConstraint.constant + 70)
+        UIView.animate(withDuration: 0.5) {
+            self.view.removeConstraint(oldBottomConstraint)
+            self.view.addConstraint(newBottomConstraint)
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func showNotificationView() {
+        timerHideNotification?.invalidate()
+        
+        let oldBottomConstraint = self.view.constraints.filter({$0.firstAnchor == notificationView.bottomAnchor}).first!
+        guard oldBottomConstraint.constant > 0 else { return }
+        let newBottomConstraint = NSLayoutConstraint(item: notificationView as Any,
+                                                     attribute: .bottom,
+                                                     relatedBy: .equal,
+                                                     toItem: view,
+                                                     attribute: .bottom,
+                                                     multiplier: 1,
+                                                     constant: baseNotificationViewBottomConstraintConstant)
+        UIView.animate(withDuration: 0.5) {
+            self.view.removeConstraint(oldBottomConstraint)
+            self.view.addConstraint(newBottomConstraint)
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }
+        
+        timerHideNotification = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { [weak self] timer in
+            guard let self = self else { return }
+            self.hideNotificationView()
+        }
     }
     
 }

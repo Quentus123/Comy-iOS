@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct CommandResult: Response {
-    let type: String
-    let result: String
+struct CommandResult: Codable {
+    let message: String
     let status: CommandResultStatus
 }

@@ -14,14 +14,22 @@ class ServerViewModel {
     let serverName: BehaviorSubject<String> = BehaviorSubject(value: "")
     let commands: BehaviorSubject<[Command]> = BehaviorSubject(value: [])
     let imagesData: BehaviorSubject<[String : Data]> = BehaviorSubject(value: [:])
+    let commandsLoading: BehaviorSubject<[String]> = BehaviorSubject(value: [])
     let isConnected: BehaviorSubject<Bool> = BehaviorSubject(value: false)
-    let commandResult: PublishSubject<CommandResult> = PublishSubject()
+    let commandResponse: PublishSubject<CommandResponse> = PublishSubject()
     var services: ServerServices
     
     init(request: URLRequest){
         services = ServerServices(request: request)
         services.delegate = self
         services.connect()
+    }
+    
+    func executeCommand(command: Command){
+        let commandsLoadingValue = (try? commandsLoading.value()) ?? []
+        guard !commandsLoadingValue.contains(command.name) else { return }
+        commandsLoading.onNext(commandsLoadingValue + [command.name])
+        services.executeCommand(command: command)
     }
     
     func disconnect() {
@@ -54,8 +62,11 @@ extension ServerViewModel: ServerServicesDelegate {
         }
     }
     
-    func didReceiveCommandResult(result: CommandResult) {
-        commandResult.onNext(result)
+    func didReceiveCommandResult(response: CommandResponse) {
+        var commandsLoadingValue = (try? commandsLoading.value()) ?? []
+        commandsLoadingValue.removeAll(where: {$0 == response.commandName})
+        commandsLoading.onNext(commandsLoadingValue)
+        commandResponse.onNext(response)
     }
     
 }

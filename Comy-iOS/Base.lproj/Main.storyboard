@@ -106,9 +106,17 @@
                                 <rect key="frame" x="0.0" y="126" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gd-SW-1Fs" customClass="NotificationView" customModule="Comy_iOS" customModuleProvider="target">
+                                <rect key="frame" x="10" y="782" width="394" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="jaN-BM-o1j"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6gd-SW-1Fs" secondAttribute="trailing" constant="10" id="H4g-RK-aS6"/>
                             <constraint firstItem="UdB-ES-b6a" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="H58-5z-mKw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UdB-ES-b6a" secondAttribute="trailing" id="Ir3-Hh-tKN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zUi-El-hGI" secondAttribute="bottom" id="PRs-TR-suM"/>
@@ -117,12 +125,15 @@
                             <constraint firstItem="zUi-El-hGI" firstAttribute="top" secondItem="UdB-ES-b6a" secondAttribute="bottom" id="med-qy-UYI"/>
                             <constraint firstItem="zUi-El-hGI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n2j-mg-djG"/>
                             <constraint firstItem="UdB-ES-b6a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="orD-rl-Qdu"/>
+                            <constraint firstItem="6gd-SW-1Fs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-10" id="pRX-AU-IKn"/>
+                            <constraint firstItem="6gd-SW-1Fs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="uYi-er-IaF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="commandsTableView" destination="zUi-El-hGI" id="rqS-Ro-Zdd"/>
                         <outlet property="nameServerLabel" destination="lqh-V7-kkc" id="VD1-EQ-kFM"/>
+                        <outlet property="notificationView" destination="6gd-SW-1Fs" id="gBk-N0-jEK"/>
                         <outlet property="shutdownButton" destination="NTt-hr-4mQ" id="dMJ-EP-ZAE"/>
                     </connections>
                 </viewController>
