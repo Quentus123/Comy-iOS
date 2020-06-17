@@ -61,7 +61,7 @@
 		660F160E2493D913006790BF /* ServerStateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateResponse.swift; sourceTree = "<group>"; };
 		660F16102493DB18006790BF /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
 		661186DA249898FE001BA0AF /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
-		6615B7312492222D006E2DE9 /* Comy-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comy-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6615B7312492222D006E2DE9 /* Comy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6615B7342492222D006E2DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6615B7362492222D006E2DE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6615B73B2492222D006E2DE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		6615B7322492222D006E2DE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6615B7312492222D006E2DE9 /* Comy-iOS.app */,
+				6615B7312492222D006E2DE9 /* Comy.app */,
 				6615B74A2492222E006E2DE9 /* Comy-iOSTests.xctest */,
 				6615B7552492222E006E2DE9 /* Comy-iOSUITests.xctest */,
 			);
@@ -347,7 +347,7 @@
 			);
 			name = "Comy-iOS";
 			productName = "Comy-iOS";
-			productReference = 6615B7312492222D006E2DE9 /* Comy-iOS.app */;
+			productReference = 6615B7312492222D006E2DE9 /* Comy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6615B7492492222E006E2DE9 /* Comy-iOSTests */ = {
@@ -768,7 +768,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Comy;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -788,7 +788,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Comy;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

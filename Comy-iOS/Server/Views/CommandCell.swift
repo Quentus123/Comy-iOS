@@ -15,6 +15,7 @@ class CommandCell: UITableViewCell {
     @IBOutlet weak var mainContainer: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

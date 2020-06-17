@@ -15,8 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LpA-oD-Ez7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="LpA-oD-Ez7">
                                 <rect key="frame" x="124" y="64" width="166" height="165.5"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LpA-oD-Ez7" secondAttribute="height" id="28S-GQ-Fyf"/>
                                 </constraints>
@@ -30,19 +31,30 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://server.url:port" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaq-qE-Q2V">
                                 <rect key="frame" x="83" y="323.5" width="248" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="done" textContentType="url"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5g-sm-wSo">
-                                <rect key="frame" x="177.5" y="372.5" width="59" height="30"/>
+                                <rect key="frame" x="172" y="372.5" width="70" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Connect"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2X-Rt-7oe" customClass="NotificationView" customModule="Comy_iOS" customModuleProvider="target">
+                                <rect key="frame" x="10" y="782" width="394" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="vSH-QF-W34"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="LpA-oD-Ez7" firstAttribute="top" secondItem="ao8-GU-dPf" secondAttribute="top" constant="20" id="6Ho-zq-Frb"/>
+                            <constraint firstItem="Q2X-Rt-7oe" firstAttribute="bottom" secondItem="ao8-GU-dPf" secondAttribute="bottom" constant="-10" id="E6M-DL-2eN"/>
                             <constraint firstItem="LpA-oD-Ez7" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="O5H-ec-YZM"/>
                             <constraint firstItem="Hwi-wx-6w3" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="OmO-Ia-GLp"/>
                             <constraint firstItem="p5g-sm-wSo" firstAttribute="top" secondItem="jaq-qE-Q2V" secondAttribute="bottom" constant="15" id="PhN-1l-58C"/>
+                            <constraint firstItem="Q2X-Rt-7oe" firstAttribute="leading" secondItem="crD-gt-hKZ" secondAttribute="leading" constant="10" id="T6C-cc-f8B"/>
+                            <constraint firstItem="Q2X-Rt-7oe" firstAttribute="trailing" secondItem="ao8-GU-dPf" secondAttribute="trailing" constant="-10" id="Tai-i0-g4a"/>
                             <constraint firstItem="jaq-qE-Q2V" firstAttribute="width" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.6" id="cEU-OD-ejo"/>
                             <constraint firstItem="jaq-qE-Q2V" firstAttribute="top" secondItem="Hwi-wx-6w3" secondAttribute="bottom" constant="15" id="dsA-tn-Gah"/>
                             <constraint firstItem="Hwi-wx-6w3" firstAttribute="width" relation="lessThanOrEqual" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.9" id="hFa-AB-3iz"/>
@@ -55,6 +67,7 @@
                     </view>
                     <connections>
                         <outlet property="connectButton" destination="p5g-sm-wSo" id="XcW-ot-1Mx"/>
+                        <outlet property="notificationView" destination="Q2X-Rt-7oe" id="0Yd-IA-g7a"/>
                         <outlet property="urlTextField" destination="jaq-qE-Q2V" id="5OI-Kb-Amx"/>
                     </connections>
                 </viewController>
@@ -143,6 +156,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo" width="512" height="512"/>
         <image name="power" catalog="system" width="128" height="124"/>
     </resources>
 </document>

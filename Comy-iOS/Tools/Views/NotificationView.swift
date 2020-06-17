@@ -13,6 +13,7 @@ import UIKit
 class NotificationView: UIView {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var mainContainer: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     
@@ -45,6 +46,18 @@ class NotificationView: UIView {
         super.prepareForInterfaceBuilder()
         commonInit()
         contentView.prepareForInterfaceBuilder()
+    }
+    
+    func switchToErrorState(content: String?) {
+        mainContainer.backgroundColor = UIColor.systemRed
+        iconImageView.image = UIImage(systemName: "multiply.circle")
+        contentLabel.text = content ?? "Unexpected error"
+    }
+    
+    func switchToSuccessState(content: String?) {
+        mainContainer.backgroundColor = UIColor.systemGreen
+        iconImageView.image = UIImage(systemName: "info.circle")
+        contentLabel.text = content ?? "Success"
     }
     
 }

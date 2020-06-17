@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommandCell" customModule="Comy_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="pMO-0F-nYm" id="Ksf-pV-i94"/>
                 <outlet property="backgroundImageView" destination="oTb-b7-xVI" id="4qi-7D-P4M"/>
                 <outlet property="mainContainer" destination="IpB-l4-bTr" id="uaj-BJ-X1f"/>
                 <outlet property="nameLabel" destination="6I8-Sb-qsQ" id="deg-Zq-lZw"/>
@@ -33,7 +34,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="IpB-l4-bTr" secondAttribute="height" id="8dY-Bd-6wW"/>
                         <constraint firstAttribute="trailing" secondItem="6I8-Sb-qsQ" secondAttribute="trailing" constant="10" id="DQq-bR-8N6"/>
@@ -45,11 +46,16 @@
                         <constraint firstItem="oTb-b7-xVI" firstAttribute="top" secondItem="IpB-l4-bTr" secondAttribute="top" id="wr9-pG-aaz"/>
                     </constraints>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pMO-0F-nYm">
+                    <rect key="frame" x="197" y="443" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="IpB-l4-bTr" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="6WM-na-DeS"/>
+                <constraint firstItem="pMO-0F-nYm" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Dra-mS-qzX"/>
                 <constraint firstItem="IpB-l4-bTr" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="UFI-gK-PJN"/>
+                <constraint firstItem="pMO-0F-nYm" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="gkl-Xa-lc6"/>
                 <constraint firstItem="IpB-l4-bTr" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="jaj-nC-Ews"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

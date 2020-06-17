@@ -13,9 +13,11 @@ class ServerViewModel {
     
     let serverName: BehaviorSubject<String> = BehaviorSubject(value: "")
     let commands: BehaviorSubject<[Command]> = BehaviorSubject(value: [])
-    let imagesData: BehaviorSubject<[String : Data]> = BehaviorSubject(value: [:])
+    let imagesData: BehaviorSubject<[String : Data?]> = BehaviorSubject(value: [:])
     let commandsLoading: BehaviorSubject<[String]> = BehaviorSubject(value: [])
     let isConnected: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    var connectionSuccess: Bool = false
+    var isConnectionCancelled: Bool = false
     let commandResponse: PublishSubject<CommandResponse> = PublishSubject()
     var services: ServerServices
     
@@ -33,6 +35,7 @@ class ServerViewModel {
     }
     
     func disconnect() {
+        isConnectionCancelled = true
         services.disconnect()
     }
     
@@ -41,6 +44,7 @@ class ServerViewModel {
 extension ServerViewModel: ServerServicesDelegate {
     
     func onConnected() {
+        connectionSuccess = true
         isConnected.onNext(true)
     }
     
@@ -53,11 +57,9 @@ extension ServerViewModel: ServerServicesDelegate {
         commands.onNext(state.commands)
         for command in state.commands {
             command.downloadImageData { (data) in
-                if let data = data {
-                    var dict = (try? self.imagesData.value()) ?? [:]
-                    dict[command.name] = data
-                    self.imagesData.onNext(dict)
-                }
+                var dict = (try? self.imagesData.value()) ?? [:]
+                dict[command.name] = data
+                self.imagesData.onNext(dict)
             }
         }
     }

@@ -94,6 +94,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Comy"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
