@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6615B7302492222D006E2DE9"
-               BuildableName = "Comy-iOS.app"
+               BuildableName = "Comy.app"
                BlueprintName = "Comy-iOS"
                ReferencedContainer = "container:Comy-iOS.xcodeproj">
             </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6615B7302492222D006E2DE9"
-            BuildableName = "Comy-iOS.app"
+            BuildableName = "Comy.app"
             BlueprintName = "Comy-iOS"
             ReferencedContainer = "container:Comy-iOS.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6615B7302492222D006E2DE9"
-            BuildableName = "Comy-iOS.app"
+            BuildableName = "Comy.app"
             BlueprintName = "Comy-iOS"
             ReferencedContainer = "container:Comy-iOS.xcodeproj">
          </BuildableReference>

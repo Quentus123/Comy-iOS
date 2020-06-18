@@ -11,7 +11,7 @@ import RxSwift
 
 class ServerViewModel {
     
-    let serverName: BehaviorSubject<String> = BehaviorSubject(value: "")
+    let serverInfo: BehaviorSubject<ServerInfoResponse> = BehaviorSubject(value: ServerInfoResponse(serverName: "", isSecured: false))
     let commands: BehaviorSubject<[Command]> = BehaviorSubject(value: [])
     let imagesData: BehaviorSubject<[String : Data?]> = BehaviorSubject(value: [:])
     let commandsLoading: BehaviorSubject<[String]> = BehaviorSubject(value: [])
@@ -46,14 +46,18 @@ extension ServerViewModel: ServerServicesDelegate {
     func onConnected() {
         connectionSuccess = true
         isConnected.onNext(true)
+        services.refreshState()
     }
     
     func onDisconnected(reason: String, code: UInt16) {
         isConnected.onNext(false)
     }
     
+    func didReceiveServerInfo(infos: ServerInfoResponse) {
+        serverInfo.onNext(infos)
+    }
+    
     func didReceiveNewState(state: ServerStateResponse) {
-        serverName.onNext(state.name)
         commands.onNext(state.commands)
         for command in state.commands {
             command.downloadImageData { (data) in

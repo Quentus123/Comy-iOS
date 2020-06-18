@@ -12,6 +12,7 @@ import Starscream
 class ServerServices {
     
     private var socket: WebSocket
+    private var token: String?
     weak var delegate: ServerServicesDelegate?
     
     init(request: URLRequest){
@@ -23,6 +24,18 @@ class ServerServices {
         socket.connect()
     }
     
+    func authentificate(id: String, password: String) {
+        socket.write(string: String(data: try! JSONEncoder().encode(AuthentificationUserMessage(id: id, password: password)), encoding: .utf8)!)
+    }
+    
+    private func handleAuthResponse(response: AuthentificationResponse) {
+        if let token = response.token {
+            print(token)
+            self.token = token
+        }
+        //TODO: Handle other cases
+    }
+    
     func disconnect() {
         socket.disconnect()
     }
@@ -32,7 +45,7 @@ class ServerServices {
     }
     
     func executeCommand(command: Command) {
-        socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name)), encoding: .utf8)!)
+        socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name, token: token)), encoding: .utf8)!)
     }
     
 }
@@ -44,7 +57,12 @@ extension ServerServices: WebSocketDelegate {
         switch event {
         case .text(let stringEvent):
             if let dataEvent = stringEvent.data(using: .utf8){
-                if let serverStateResponse = try? JSONDecoder().decode(ServerStateResponse.self, from: dataEvent){
+                if let serverInfoResponse = try? JSONDecoder().decode(ServerInfoResponse.self, from: dataEvent) {
+                    delegate?.didReceiveServerInfo(infos: serverInfoResponse)
+                } else if let authResponse = try? JSONDecoder().decode(AuthentificationResponse.self, from: dataEvent) {
+                    handleAuthResponse(response: authResponse)
+                }
+                else if let serverStateResponse = try? JSONDecoder().decode(ServerStateResponse.self, from: dataEvent){
                     delegate?.didReceiveNewState(state: serverStateResponse)
                 } else if let commandResponse = try? JSONDecoder().decode(CommandResponse.self, from: dataEvent){
                     delegate?.didReceiveCommandResult(response: commandResponse)
@@ -66,6 +84,7 @@ extension ServerServices: WebSocketDelegate {
 protocol ServerServicesDelegate: class {
     func onConnected()
     func onDisconnected(reason: String, code: UInt16)
+    func didReceiveServerInfo(infos: ServerInfoResponse)
     func didReceiveNewState(state: ServerStateResponse)
     func didReceiveCommandResult(response: CommandResponse)
 }

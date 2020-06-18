@@ -28,6 +28,11 @@
 		6615B77D2492328D006E2DE9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B77C2492328D006E2DE9 /* Response.swift */; };
 		6642203F24976DDD00CD67D8 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6642203E24976DDD00CD67D8 /* CommandCell.xib */; };
 		6642204124976E6B00CD67D8 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642204024976E6B00CD67D8 /* CommandCell.swift */; };
+		66C8FAAC249BDAFA00397933 /* AuthentificationTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */; };
+		66C8FAAE249BDB3200397933 /* AuthentificateUserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */; };
+		66C8FAB0249BDB6100397933 /* RefreshTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */; };
+		66C8FAB2249BDC1E00397933 /* AuthentificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAB1249BDC1E00397933 /* AuthentificationResponse.swift */; };
+		66C8FAB4249BDCA700397933 /* ServerInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAB3249BDCA700397933 /* ServerInfoResponse.swift */; };
 		66E7108A2498F4EC0022D9EA /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E710892498F4EC0022D9EA /* NotificationView.xib */; };
 		66E7108C2498F6990022D9EA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108B2498F6990022D9EA /* NotificationView.swift */; };
 		66E7108E249904BA0022D9EA /* CommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108D249904BA0022D9EA /* CommandResponse.swift */; };
@@ -83,6 +88,11 @@
 		6615B77C2492328D006E2DE9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		6642203E24976DDD00CD67D8 /* CommandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
 		6642204024976E6B00CD67D8 /* CommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
+		66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationTokenMessage.swift; sourceTree = "<group>"; };
+		66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificateUserMessage.swift; sourceTree = "<group>"; };
+		66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenMessage.swift; sourceTree = "<group>"; };
+		66C8FAB1249BDC1E00397933 /* AuthentificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationResponse.swift; sourceTree = "<group>"; };
+		66C8FAB3249BDCA700397933 /* ServerInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoResponse.swift; sourceTree = "<group>"; };
 		66E710892498F4EC0022D9EA /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		66E7108B2498F6990022D9EA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		66E7108D249904BA0022D9EA /* CommandResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandResponse.swift; sourceTree = "<group>"; };
@@ -240,6 +250,9 @@
 				6615B7752492311D006E2DE9 /* Message.swift */,
 				6615B7772492314C006E2DE9 /* ExecuteCommandMessage.swift */,
 				6615B7792492322A006E2DE9 /* NeedStateMessage.swift */,
+				66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */,
+				66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */,
+				66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -252,6 +265,8 @@
 				6615B7702492308A006E2DE9 /* CommandResult.swift */,
 				6615B77224923093006E2DE9 /* CommandResultStatus.swift */,
 				660F160E2493D913006790BF /* ServerStateResponse.swift */,
+				66C8FAB3249BDCA700397933 /* ServerInfoResponse.swift */,
+				66C8FAB1249BDC1E00397933 /* AuthentificationResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -570,6 +585,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6615B77324923093006E2DE9 /* CommandResultStatus.swift in Sources */,
+				66C8FAB2249BDC1E00397933 /* AuthentificationResponse.swift in Sources */,
+				66C8FAB0249BDB6100397933 /* RefreshTokenMessage.swift in Sources */,
+				66C8FAAC249BDAFA00397933 /* AuthentificationTokenMessage.swift in Sources */,
 				6615B7782492314C006E2DE9 /* ExecuteCommandMessage.swift in Sources */,
 				6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */,
 				6615B77D2492328D006E2DE9 /* Response.swift in Sources */,
@@ -584,7 +602,9 @@
 				6642204124976E6B00CD67D8 /* CommandCell.swift in Sources */,
 				6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */,
 				661186DB249898FE001BA0AF /* OnboardingController.swift in Sources */,
+				66C8FAAE249BDB3200397933 /* AuthentificateUserMessage.swift in Sources */,
 				6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */,
+				66C8FAB4249BDCA700397933 /* ServerInfoResponse.swift in Sources */,
 				6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */,
 				6615B76F2492305E006E2DE9 /* Command.swift in Sources */,
 			);
