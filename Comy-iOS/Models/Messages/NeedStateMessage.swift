@@ -10,4 +10,5 @@ import Foundation
 
 struct NeedStateMessage: Message {
     let type: String = "Need refresh"
+    let token: String?
 }

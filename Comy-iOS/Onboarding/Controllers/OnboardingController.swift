@@ -78,8 +78,12 @@ class OnboardingController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 let authAlert = UIAlertController(title: "Authentification required", message: nil, preferredStyle: .alert)
-                authAlert.addTextField(configurationHandler: nil)
-                authAlert.addTextField(configurationHandler: nil)
+                authAlert.addTextField(configurationHandler: { usernameTextField in
+                    usernameTextField.placeholder = "Username"
+                })
+                authAlert.addTextField(configurationHandler: { passwordTextField in
+                    passwordTextField.placeholder = "Password"
+                })
                 authAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
                     guard let self = self else { return }
                     let username = authAlert.textFields![0].text ?? ""

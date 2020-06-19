@@ -19,6 +19,7 @@ target 'Comy-iOS' do
 
   target 'Comy-iOSUITests' do
     # Pods for testing
+    inherit! :search_paths
   end
 
 end

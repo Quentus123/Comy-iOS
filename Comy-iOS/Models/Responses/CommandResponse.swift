@@ -12,5 +12,5 @@ struct CommandResponse: Response {
     let type: String
     let commandName: String
     let result: CommandResult
-    let auth: AuthentificationResponse?
+    let authError: AuthentificationResponse?
 }

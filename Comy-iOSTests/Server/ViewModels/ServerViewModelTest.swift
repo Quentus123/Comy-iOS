@@ -9,7 +9,7 @@
 import XCTest
 import Starscream
 import RxSwift
-@testable import Comy_iOS
+@testable import Comy
 
 class ServerViewModelTest: XCTestCase {
     
@@ -29,7 +29,10 @@ class ServerViewModelTest: XCTestCase {
     func testDidReceiveStateResponse() throws {
         //Arrange
         let absolutelyUselessRequest = URLRequest(url: URL(string: "https://absolutelynotawebsite.com")!)
-        let serverViewModel = ServerViewModel(request: absolutelyUselessRequest)
+        let services = ServerServices(request: absolutelyUselessRequest)
+        services.connect()
+        let serverViewModel = ServerViewModel(services: services)
+        services.delegate = serverViewModel
         let stateResponse = try! JSONDecoder().decode(ServerStateResponse.self, from: testStateResponseJSON.data(using: .utf8)!)
         
         //Act
@@ -45,7 +48,10 @@ class ServerViewModelTest: XCTestCase {
         
         //Arrange
         let absolutelyUselessRequest = URLRequest(url: URL(string: "https://absolutelynotawebsite.com")!)
-        let serverViewModel = ServerViewModel(request: absolutelyUselessRequest)
+        let services = ServerServices(request: absolutelyUselessRequest)
+        services.connect()
+        let serverViewModel = ServerViewModel(services: services)
+        services.delegate = serverViewModel
         let commandResponseFromJSON = try! JSONDecoder().decode(CommandResponse.self, from: testCommandResponseJSON.data(using: .utf8)!)
         
         //Act & Assert

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25940474D18F82C45C938F61 /* Pods_Comy_iOS_Comy_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8B4311477D4174EA6B2FAC /* Pods_Comy_iOS_Comy_iOSUITests.framework */; };
 		660F160D2493D465006790BF /* ServerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F160C2493D465006790BF /* ServerServices.swift */; };
 		660F160F2493D913006790BF /* ServerStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F160E2493D913006790BF /* ServerStateResponse.swift */; };
 		660F16112493DB18006790BF /* ServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660F16102493DB18006790BF /* ServerViewModel.swift */; };
@@ -38,6 +37,7 @@
 		66E7108C2498F6990022D9EA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108B2498F6990022D9EA /* NotificationView.swift */; };
 		66E7108E249904BA0022D9EA /* CommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108D249904BA0022D9EA /* CommandResponse.swift */; };
 		66E71094249917FE0022D9EA /* ServerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71093249917FE0022D9EA /* ServerViewModelTest.swift */; };
+		A480C1E634A5B2B9B458AC01 /* Pods_Comy_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B18CA682F8837896EB4631B /* Pods_Comy_iOSUITests.framework */; };
 		A717272C7577C392AE26B756 /* Pods_Comy_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A17DF704DDB833988D17555 /* Pods_Comy_iOS.framework */; };
 		CCB5A842222BA848E4A30D3D /* Pods_Comy_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7512FA05FC630A457D8718CA /* Pods_Comy_iOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,7 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A8B4311477D4174EA6B2FAC /* Pods_Comy_iOS_Comy_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOS_Comy_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		203B17A0B4A0B9C5B9329152 /* Pods-Comy-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Comy-iOSUITests/Pods-Comy-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2B18CA682F8837896EB4631B /* Pods_Comy_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0A58066BC0502D709AAADF /* Pods-Comy-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Comy-iOSTests/Pods-Comy-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		4B51128177CF500C4A12ADA0 /* Pods-Comy-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOS.release.xcconfig"; path = "Target Support Files/Pods-Comy-iOS/Pods-Comy-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		660F160C2493D465006790BF /* ServerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerServices.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		7512FA05FC630A457D8718CA /* Pods_Comy_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3089C73125CEE2716EEF6FA /* Pods-Comy-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Comy-iOS/Pods-Comy-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B4220DFE9D4B90397213C463 /* Pods-Comy-iOS-Comy-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOS-Comy-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Comy-iOS-Comy-iOSUITests/Pods-Comy-iOS-Comy-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F3628841EDA0C28D4EFBDB55 /* Pods-Comy-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Comy-iOSUITests/Pods-Comy-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB7DAB9463D2047F2007B2AA /* Pods-Comy-iOS-Comy-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOS-Comy-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Comy-iOS-Comy-iOSUITests/Pods-Comy-iOS-Comy-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25940474D18F82C45C938F61 /* Pods_Comy_iOS_Comy_iOSUITests.framework in Frameworks */,
+				A480C1E634A5B2B9B458AC01 /* Pods_Comy_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				6A17DF704DDB833988D17555 /* Pods_Comy_iOS.framework */,
-				0A8B4311477D4174EA6B2FAC /* Pods_Comy_iOS_Comy_iOSUITests.framework */,
 				7512FA05FC630A457D8718CA /* Pods_Comy_iOSTests.framework */,
+				2B18CA682F8837896EB4631B /* Pods_Comy_iOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,6 +352,8 @@
 				B4220DFE9D4B90397213C463 /* Pods-Comy-iOS-Comy-iOSUITests.release.xcconfig */,
 				7315928DE9C84BE2AC521E22 /* Pods-Comy-iOSTests.debug.xcconfig */,
 				3F0A58066BC0502D709AAADF /* Pods-Comy-iOSTests.release.xcconfig */,
+				F3628841EDA0C28D4EFBDB55 /* Pods-Comy-iOSUITests.debug.xcconfig */,
+				203B17A0B4A0B9C5B9329152 /* Pods-Comy-iOSUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -403,7 +407,6 @@
 				6615B7512492222E006E2DE9 /* Sources */,
 				6615B7522492222E006E2DE9 /* Frameworks */,
 				6615B7532492222E006E2DE9 /* Resources */,
-				E1B048A09C0A3186B5FA7713 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -542,28 +545,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Comy-iOS-Comy-iOSUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Comy-iOSUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E1B048A09C0A3186B5FA7713 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Comy-iOS-Comy-iOSUITests/Pods-Comy-iOS-Comy-iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Comy-iOS-Comy-iOSUITests/Pods-Comy-iOS-Comy-iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Comy-iOS-Comy-iOSUITests/Pods-Comy-iOS-Comy-iOSUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F61002C67816A212228A1524 /* [CP] Check Pods Manifest.lock */ = {
@@ -835,7 +821,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7A54AJQ72;
 				INFOPLIST_FILE = "Comy-iOSTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -845,7 +831,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comy-iOS.app/Comy-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comy.app/Comy";
 			};
 			name = Debug;
 		};
@@ -858,7 +844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7A54AJQ72;
 				INFOPLIST_FILE = "Comy-iOSTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -868,18 +854,19 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comy-iOS.app/Comy-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comy.app/Comy";
 			};
 			name = Release;
 		};
 		6615B7652492222E006E2DE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB7DAB9463D2047F2007B2AA /* Pods-Comy-iOS-Comy-iOSUITests.debug.xcconfig */;
+			baseConfigurationReference = F3628841EDA0C28D4EFBDB55 /* Pods-Comy-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7A54AJQ72;
 				INFOPLIST_FILE = "Comy-iOSUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -895,12 +882,13 @@
 		};
 		6615B7662492222E006E2DE9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4220DFE9D4B90397213C463 /* Pods-Comy-iOS-Comy-iOSUITests.release.xcconfig */;
+			baseConfigurationReference = 203B17A0B4A0B9C5B9329152 /* Pods-Comy-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7A54AJQ72;
 				INFOPLIST_FILE = "Comy-iOSUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

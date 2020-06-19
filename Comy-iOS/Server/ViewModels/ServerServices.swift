@@ -16,6 +16,7 @@ class ServerServices {
     private var refreshToken: String?
     private var currentExecutionCommands: [Command] = []
     private var waitingRefreshTokenCommands: [Command] = []
+    private var isWaitingRefreshTokenToGetState = false
     weak var delegate: ServerServicesDelegate?
     
     init(request: URLRequest){
@@ -37,11 +38,18 @@ class ServerServices {
             if let refreshToken = response.refreshToken { //auth came from username and password
                 self.refreshToken = refreshToken
                 delegate?.onAuthentification(success: true)
-            } else if response.message == "refreshed token" { //we need to reexecute commands
+            } else if response.message == "refreshed token" { //we need to reexecute commands and get state if needed
+                print("Token successfully refreshed, executing commands : \(waitingRefreshTokenCommands)")
                 for command in waitingRefreshTokenCommands {
                     executeCommand(command: command)
                 }
+                if isWaitingRefreshTokenToGetState {
+                    refreshState()
+                }
             }
+        } else if response.message == "error with refresh token" { //auth tokens are not valid
+            waitingRefreshTokenCommands = []
+            self.disconnect()
         } else {
             delegate?.onAuthentification(success: false)
         }
@@ -52,7 +60,7 @@ class ServerServices {
     }
     
     func refreshState() {
-        socket.write(string: String(data: try! JSONEncoder().encode(NeedStateMessage()), encoding: .utf8)!)
+        socket.write(string: String(data: try! JSONEncoder().encode(NeedStateMessage(token: token)), encoding: .utf8)!)
     }
     
     func refreshAuthToken() {
@@ -80,15 +88,24 @@ extension ServerServices: WebSocketDelegate {
                     handleAuthResponse(response: authResponse)
                 }
                 else if let serverStateResponse = try? JSONDecoder().decode(ServerStateResponse.self, from: dataEvent){
-                    delegate?.didReceiveNewState(state: serverStateResponse)
+                    if let authError = serverStateResponse.authError, authError.tokenExpiredError, !isWaitingRefreshTokenToGetState { //need to refresh token and get state
+                        isWaitingRefreshTokenToGetState = true
+                        self.refreshAuthToken()
+                    } else {
+                        isWaitingRefreshTokenToGetState = false
+                        delegate?.didReceiveNewState(state: serverStateResponse)
+                    }
                 } else if let commandResponse = try? JSONDecoder().decode(CommandResponse.self, from: dataEvent){
-                    if let auth = commandResponse.auth, auth.tokenExpiredError, !waitingRefreshTokenCommands.map(\.name).contains(commandResponse.commandName) { //need to refresh token and restart command
+                    if let authError = commandResponse.authError, authError.tokenExpiredError, !waitingRefreshTokenCommands.map(\.name).contains(commandResponse.commandName) { //need to refresh token and restart command
                         guard let commandToReexecuteAfterRefresh = currentExecutionCommands.first(where: {$0.name == commandResponse.commandName}) else { return }
+                        print("ERROR: TOKEN EXPIRED ! refreshing token...")
                         waitingRefreshTokenCommands.append(commandToReexecuteAfterRefresh)
                         self.refreshAuthToken()
                     } else { //Command execution completed (successfully or not)
                         currentExecutionCommands.removeAll(where: {$0.name == commandResponse.commandName})
                         waitingRefreshTokenCommands.removeAll(where: {$0.name == commandResponse.commandName})
+                        print("waitingRefreshTokenCommands: \(waitingRefreshTokenCommands)")
+                        print("currentExecutionCommands: \(currentExecutionCommands)")
                         delegate?.didReceiveCommandResult(response: commandResponse)
                     }
                     
