@@ -33,6 +33,7 @@
 		66C8FAB0249BDB6100397933 /* RefreshTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */; };
 		66C8FAB2249BDC1E00397933 /* AuthentificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAB1249BDC1E00397933 /* AuthentificationResponse.swift */; };
 		66C8FAB4249BDCA700397933 /* ServerInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAB3249BDCA700397933 /* ServerInfoResponse.swift */; };
+		66E170F7249CE7670002EDAC /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E170F6249CE7670002EDAC /* OnboardingViewModel.swift */; };
 		66E7108A2498F4EC0022D9EA /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E710892498F4EC0022D9EA /* NotificationView.xib */; };
 		66E7108C2498F6990022D9EA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108B2498F6990022D9EA /* NotificationView.swift */; };
 		66E7108E249904BA0022D9EA /* CommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108D249904BA0022D9EA /* CommandResponse.swift */; };
@@ -93,6 +94,7 @@
 		66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenMessage.swift; sourceTree = "<group>"; };
 		66C8FAB1249BDC1E00397933 /* AuthentificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationResponse.swift; sourceTree = "<group>"; };
 		66C8FAB3249BDCA700397933 /* ServerInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoResponse.swift; sourceTree = "<group>"; };
+		66E170F6249CE7670002EDAC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		66E710892498F4EC0022D9EA /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		66E7108B2498F6990022D9EA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		66E7108D249904BA0022D9EA /* CommandResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandResponse.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		661186D8249898C8001BA0AF /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				66E170F8249CE76E0002EDAC /* ViewModels */,
 				661186D9249898EA001BA0AF /* Controllers */,
 			);
 			path = Onboarding;
@@ -293,6 +296,14 @@
 			children = (
 				660F16102493DB18006790BF /* ServerViewModel.swift */,
 				660F160C2493D465006790BF /* ServerServices.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		66E170F8249CE76E0002EDAC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				66E170F6249CE7670002EDAC /* OnboardingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -603,6 +614,7 @@
 				6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */,
 				661186DB249898FE001BA0AF /* OnboardingController.swift in Sources */,
 				66C8FAAE249BDB3200397933 /* AuthentificateUserMessage.swift in Sources */,
+				66E170F7249CE7670002EDAC /* OnboardingViewModel.swift in Sources */,
 				6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */,
 				66C8FAB4249BDCA700397933 /* ServerInfoResponse.swift in Sources */,
 				6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */,

@@ -11,20 +11,18 @@ import RxSwift
 
 class ServerViewModel {
     
-    let serverInfo: BehaviorSubject<ServerInfoResponse> = BehaviorSubject(value: ServerInfoResponse(serverName: "", isSecured: false))
     let commands: BehaviorSubject<[Command]> = BehaviorSubject(value: [])
+    let serverName: BehaviorSubject<String> = BehaviorSubject(value: "")
     let imagesData: BehaviorSubject<[String : Data?]> = BehaviorSubject(value: [:])
     let commandsLoading: BehaviorSubject<[String]> = BehaviorSubject(value: [])
-    let isConnected: BehaviorSubject<Bool> = BehaviorSubject(value: false)
-    var connectionSuccess: Bool = false
+    let isConnected: BehaviorSubject<Bool> = BehaviorSubject(value: true)
     var isConnectionCancelled: Bool = false
     let commandResponse: PublishSubject<CommandResponse> = PublishSubject()
     var services: ServerServices
     
-    init(request: URLRequest){
-        services = ServerServices(request: request)
-        services.delegate = self
-        services.connect()
+    init(services: ServerServices){
+        self.services = services
+        services.refreshState()
     }
     
     func executeCommand(command: Command){
@@ -32,6 +30,10 @@ class ServerViewModel {
         guard !commandsLoadingValue.contains(command.name) else { return }
         commandsLoading.onNext(commandsLoadingValue + [command.name])
         services.executeCommand(command: command)
+    }
+    
+    func authentificate(id: String, password: String) {
+        services.authentificate(id: id, password: password)
     }
     
     func disconnect() {
@@ -44,9 +46,10 @@ class ServerViewModel {
 extension ServerViewModel: ServerServicesDelegate {
     
     func onConnected() {
-        connectionSuccess = true
         isConnected.onNext(true)
-        services.refreshState()
+    }
+    
+    func onAuthentification(success: Bool) {
     }
     
     func onDisconnected(reason: String, code: UInt16) {
@@ -54,10 +57,10 @@ extension ServerViewModel: ServerServicesDelegate {
     }
     
     func didReceiveServerInfo(infos: ServerInfoResponse) {
-        serverInfo.onNext(infos)
     }
     
     func didReceiveNewState(state: ServerStateResponse) {
+        serverName.onNext(state.name)
         commands.onNext(state.commands)
         for command in state.commands {
             command.downloadImageData { (data) in

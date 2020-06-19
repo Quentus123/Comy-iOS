@@ -42,8 +42,7 @@ class ServerCommandsController: UIViewController{
         commandsTableView.register(CommandCell.self, forCellReuseIdentifier: "CommandCell")
         commandsTableView.rx.setDelegate(self).disposed(by: disposeBag)
         
-        serverViewModel.serverInfo
-            .map(\.serverName)
+        serverViewModel.serverName
             .bind(to: nameServerLabel.rx.text).disposed(by: disposeBag)
         
         serverViewModel.commandsLoading

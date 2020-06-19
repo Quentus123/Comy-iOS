@@ -13,6 +13,9 @@ class ServerServices {
     
     private var socket: WebSocket
     private var token: String?
+    private var refreshToken: String?
+    private var currentExecutionCommands: [Command] = []
+    private var waitingRefreshTokenCommands: [Command] = []
     weak var delegate: ServerServicesDelegate?
     
     init(request: URLRequest){
@@ -30,10 +33,18 @@ class ServerServices {
     
     private func handleAuthResponse(response: AuthentificationResponse) {
         if let token = response.token {
-            print(token)
             self.token = token
+            if let refreshToken = response.refreshToken { //auth came from username and password
+                self.refreshToken = refreshToken
+                delegate?.onAuthentification(success: true)
+            } else if response.message == "refreshed token" { //we need to reexecute commands
+                for command in waitingRefreshTokenCommands {
+                    executeCommand(command: command)
+                }
+            }
+        } else {
+            delegate?.onAuthentification(success: false)
         }
-        //TODO: Handle other cases
     }
     
     func disconnect() {
@@ -44,7 +55,13 @@ class ServerServices {
         socket.write(string: String(data: try! JSONEncoder().encode(NeedStateMessage()), encoding: .utf8)!)
     }
     
+    func refreshAuthToken() {
+        guard let refreshToken = refreshToken else { return }
+        socket.write(string: String(data: try! JSONEncoder().encode(RefreshTokenMessage(refreshToken: refreshToken)), encoding: .utf8)!)
+    }
+    
     func executeCommand(command: Command) {
+        currentExecutionCommands.append(command)
         socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name, token: token)), encoding: .utf8)!)
     }
     
@@ -65,7 +82,16 @@ extension ServerServices: WebSocketDelegate {
                 else if let serverStateResponse = try? JSONDecoder().decode(ServerStateResponse.self, from: dataEvent){
                     delegate?.didReceiveNewState(state: serverStateResponse)
                 } else if let commandResponse = try? JSONDecoder().decode(CommandResponse.self, from: dataEvent){
-                    delegate?.didReceiveCommandResult(response: commandResponse)
+                    if let auth = commandResponse.auth, auth.tokenExpiredError, !waitingRefreshTokenCommands.map(\.name).contains(commandResponse.commandName) { //need to refresh token and restart command
+                        guard let commandToReexecuteAfterRefresh = currentExecutionCommands.first(where: {$0.name == commandResponse.commandName}) else { return }
+                        waitingRefreshTokenCommands.append(commandToReexecuteAfterRefresh)
+                        self.refreshAuthToken()
+                    } else { //Command execution completed (successfully or not)
+                        currentExecutionCommands.removeAll(where: {$0.name == commandResponse.commandName})
+                        waitingRefreshTokenCommands.removeAll(where: {$0.name == commandResponse.commandName})
+                        delegate?.didReceiveCommandResult(response: commandResponse)
+                    }
+                    
                 }
             }
         case .connected(_):
@@ -83,6 +109,7 @@ extension ServerServices: WebSocketDelegate {
 
 protocol ServerServicesDelegate: class {
     func onConnected()
+    func onAuthentification(success: Bool)
     func onDisconnected(reason: String, code: UInt16)
     func didReceiveServerInfo(infos: ServerInfoResponse)
     func didReceiveNewState(state: ServerStateResponse)
