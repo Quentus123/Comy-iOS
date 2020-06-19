@@ -50,7 +50,9 @@ class OnboardingController: UIViewController {
             .when(.recognized)
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                guard let url = URL(string: self.urlTextField.text!) else { return }
+                guard let input = self.urlTextField.text else { return }
+                guard let url = URL(string: input) else { return }
+                UserDefaults.standard.set(input, forKey: Self.USER_DEFAULT_LAST_URL)
                 
                 self.connectButton.isEnabled = false
                 

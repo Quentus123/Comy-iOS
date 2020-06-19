@@ -73,6 +73,10 @@ class ServerServices {
         socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name, token: token)), encoding: .utf8)!)
     }
     
+    deinit {
+        socket.disconnect()
+    }
+    
 }
 
 extension ServerServices: WebSocketDelegate {
