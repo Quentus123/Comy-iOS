@@ -14,7 +14,7 @@ import UIKit
 
 class OnboardingController: UIViewController {
     
-    @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var urlTextField: BeautifulTextField!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var notificationView: NotificationView!
     private let disposeBag = DisposeBag()
@@ -32,8 +32,7 @@ class OnboardingController: UIViewController {
         baseNotificationViewBottomConstraintConstant = view.constraints.filter({$0.firstAnchor == notificationView.bottomAnchor}).first!.constant
         notificationView.isHidden = true //will be set to false in viewDidAppear after first constraints change, it allows to modify bases constraints in storyboard instead of in this file
         
-        urlTextField.text = UserDefaults.standard.string(forKey: Self.USER_DEFAULT_LAST_URL)
-        urlTextField.delegate = self
+        urlTextField.textField.text = UserDefaults.standard.string(forKey: Self.USER_DEFAULT_LAST_URL)
         
         notificationView.rx
             .tapGesture()
@@ -50,7 +49,7 @@ class OnboardingController: UIViewController {
             .when(.recognized)
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                guard let input = self.urlTextField.text else { return }
+                guard let input = self.urlTextField.textField.text else { return }
                 guard let url = URL(string: input) else { return }
                 UserDefaults.standard.set(input, forKey: Self.USER_DEFAULT_LAST_URL)
                 
@@ -79,6 +78,11 @@ class OnboardingController: UIViewController {
             .filter({$0})
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
+                let loginController = self.storyboard!.instantiateViewController(identifier: "LoginController") as! LoginController
+                loginController.modalPresentationStyle = .overFullScreen
+                loginController.delegate = self
+                self.present(loginController, animated: true)
+                /*
                 let authAlert = UIAlertController(title: "Authentification required", message: nil, preferredStyle: .alert)
                 authAlert.addTextField(configurationHandler: { usernameTextField in
                     usernameTextField.placeholder = "Username"
@@ -96,6 +100,7 @@ class OnboardingController: UIViewController {
                     self.connectButton.isEnabled = true
                 }))
                 self.present(authAlert, animated: true)
+                */
             })
             .disposed(by: disposeBag)
         
@@ -176,8 +181,13 @@ class OnboardingController: UIViewController {
     
 }
 
-extension OnboardingController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+extension OnboardingController: LoginControllerDelegate {
+    
+    func onLoginCancelled() {
+        self.connectButton.isEnabled = true
+    }
+    
+    func connect(with username: String, password: String) {
+        self.onboardingViewModel.authentificate(id: username, password: password)
     }
 }

@@ -10,7 +10,7 @@
         <!--Onboarding Controller-->
         <scene sceneID="Jlk-1K-OMe">
             <objects>
-                <viewController id="oYS-vL-Z48" customClass="OnboardingController" customModule="Comy_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oYS-vL-Z48" customClass="OnboardingController" customModule="Comy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="crD-gt-hKZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,39 +28,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://server.url:port" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaq-qE-Q2V">
-                                <rect key="frame" x="83" y="323.5" width="248" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="done" textContentType="url"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5g-sm-wSo">
-                                <rect key="frame" x="172" y="372.5" width="70" height="33"/>
+                                <rect key="frame" x="172" y="414" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Connect"/>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2X-Rt-7oe" customClass="NotificationView" customModule="Comy_iOS" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2X-Rt-7oe" customClass="NotificationView" customModule="Comy" customModuleProvider="target">
                                 <rect key="frame" x="10" y="782" width="394" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="vSH-QF-W34"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWf-4n-Q71" customClass="BeautifulTextField" customModule="Comy" customModuleProvider="target">
+                                <rect key="frame" x="62" y="328.5" width="290" height="65.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Server URL"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textFieldRoundedCoef">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textFieldFontSize">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="p5g-sm-wSo" firstAttribute="top" secondItem="HWf-4n-Q71" secondAttribute="bottom" constant="20" id="21h-yl-I8G"/>
                             <constraint firstItem="LpA-oD-Ez7" firstAttribute="top" secondItem="ao8-GU-dPf" secondAttribute="top" constant="20" id="6Ho-zq-Frb"/>
                             <constraint firstItem="Q2X-Rt-7oe" firstAttribute="bottom" secondItem="ao8-GU-dPf" secondAttribute="bottom" constant="-10" id="E6M-DL-2eN"/>
+                            <constraint firstItem="HWf-4n-Q71" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="Noc-af-PKN"/>
                             <constraint firstItem="LpA-oD-Ez7" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="O5H-ec-YZM"/>
                             <constraint firstItem="Hwi-wx-6w3" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="OmO-Ia-GLp"/>
-                            <constraint firstItem="p5g-sm-wSo" firstAttribute="top" secondItem="jaq-qE-Q2V" secondAttribute="bottom" constant="15" id="PhN-1l-58C"/>
+                            <constraint firstItem="HWf-4n-Q71" firstAttribute="height" secondItem="ao8-GU-dPf" secondAttribute="height" multiplier="0.08" id="SDU-Vz-RjO"/>
                             <constraint firstItem="Q2X-Rt-7oe" firstAttribute="leading" secondItem="crD-gt-hKZ" secondAttribute="leading" constant="10" id="T6C-cc-f8B"/>
                             <constraint firstItem="Q2X-Rt-7oe" firstAttribute="trailing" secondItem="ao8-GU-dPf" secondAttribute="trailing" constant="-10" id="Tai-i0-g4a"/>
-                            <constraint firstItem="jaq-qE-Q2V" firstAttribute="width" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.6" id="cEU-OD-ejo"/>
-                            <constraint firstItem="jaq-qE-Q2V" firstAttribute="top" secondItem="Hwi-wx-6w3" secondAttribute="bottom" constant="15" id="dsA-tn-Gah"/>
+                            <constraint firstItem="HWf-4n-Q71" firstAttribute="top" secondItem="Hwi-wx-6w3" secondAttribute="bottom" constant="20" id="YJF-gF-whP"/>
+                            <constraint firstItem="HWf-4n-Q71" firstAttribute="width" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.7" id="Z3Y-Fl-7mh"/>
                             <constraint firstItem="Hwi-wx-6w3" firstAttribute="width" relation="lessThanOrEqual" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.9" id="hFa-AB-3iz"/>
                             <constraint firstItem="LpA-oD-Ez7" firstAttribute="width" secondItem="ao8-GU-dPf" secondAttribute="width" multiplier="0.4" id="jIm-F6-T0r"/>
                             <constraint firstItem="p5g-sm-wSo" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="lQq-ql-awg"/>
-                            <constraint firstItem="jaq-qE-Q2V" firstAttribute="centerX" secondItem="ao8-GU-dPf" secondAttribute="centerX" id="p9j-Kq-X8r"/>
                             <constraint firstItem="Hwi-wx-6w3" firstAttribute="top" secondItem="LpA-oD-Ez7" secondAttribute="bottom" constant="50" id="uyw-Kq-M3c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ao8-GU-dPf"/>
@@ -68,17 +80,130 @@
                     <connections>
                         <outlet property="connectButton" destination="p5g-sm-wSo" id="XcW-ot-1Mx"/>
                         <outlet property="notificationView" destination="Q2X-Rt-7oe" id="0Yd-IA-g7a"/>
-                        <outlet property="urlTextField" destination="jaq-qE-Q2V" id="5OI-Kb-Amx"/>
+                        <outlet property="urlTextField" destination="HWf-4n-Q71" id="9rc-2x-ZaY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mK6-ot-qWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1119" y="139"/>
         </scene>
+        <!--Login Controller-->
+        <scene sceneID="FLq-yR-mMy">
+            <objects>
+                <viewController storyboardIdentifier="LoginController" modalTransitionStyle="crossDissolve" id="KLc-tc-rfF" customClass="LoginController" customModule="Comy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xtp-Vq-Gf3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAj-LI-cUC" userLabel="Dark Background">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3x-Is-C04" userLabel="Main Container" customClass="RoundedView" customModule="Comy" customModuleProvider="target">
+                                <rect key="frame" x="41.5" y="248.5" width="331" height="409"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Login required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3m-xe-mmy">
+                                        <rect key="frame" x="77.5" y="15" width="176" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o86-bM-5Ek">
+                                        <rect key="frame" x="116" y="266" width="99" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pcu-j8-pXn">
+                                        <rect key="frame" x="33" y="60" width="265" height="176"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5b-AX-VHC" customClass="BeautifulTextField" customModule="Comy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="265" height="76.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textFieldRoundedCoef">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                                        <real key="value" value="17"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textFieldFontSize">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLY-D3-og2">
+                                                <rect key="frame" x="0.0" y="76.5" width="265" height="23"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqM-Ea-dQ5" customClass="BeautifulTextField" customModule="Comy" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="99.5" width="265" height="76.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textFieldRoundedCoef">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                                        <real key="value" value="17"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textFieldFontSize">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="176" id="Stk-Py-21V"/>
+                                            <constraint firstItem="xLY-D3-og2" firstAttribute="height" secondItem="x5b-AX-VHC" secondAttribute="height" multiplier="0.3" id="bb7-8Y-RvC"/>
+                                            <constraint firstItem="AqM-Ea-dQ5" firstAttribute="height" secondItem="x5b-AX-VHC" secondAttribute="height" id="jIe-Fr-xvJ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Pcu-j8-pXn" firstAttribute="top" secondItem="S3m-xe-mmy" secondAttribute="bottom" constant="15" id="94P-2I-3uc"/>
+                                    <constraint firstItem="o86-bM-5Ek" firstAttribute="width" secondItem="j3x-Is-C04" secondAttribute="width" multiplier="0.3" id="Ljp-TW-Fcu"/>
+                                    <constraint firstItem="Pcu-j8-pXn" firstAttribute="width" secondItem="j3x-Is-C04" secondAttribute="width" multiplier="0.8" id="V36-a3-2wb"/>
+                                    <constraint firstItem="S3m-xe-mmy" firstAttribute="top" secondItem="j3x-Is-C04" secondAttribute="top" constant="15" id="VBR-dB-GpA"/>
+                                    <constraint firstItem="S3m-xe-mmy" firstAttribute="centerX" secondItem="j3x-Is-C04" secondAttribute="centerX" id="ZvE-jq-PbG"/>
+                                    <constraint firstItem="Pcu-j8-pXn" firstAttribute="centerX" secondItem="j3x-Is-C04" secondAttribute="centerX" id="a9x-HV-XaC"/>
+                                    <constraint firstItem="o86-bM-5Ek" firstAttribute="top" secondItem="Pcu-j8-pXn" secondAttribute="bottom" constant="30" id="bwH-m0-xeq"/>
+                                    <constraint firstItem="o86-bM-5Ek" firstAttribute="centerX" secondItem="j3x-Is-C04" secondAttribute="centerX" id="q9d-Ia-bBq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="j3x-Is-C04" firstAttribute="width" secondItem="hrx-I5-04y" secondAttribute="width" multiplier="0.8" id="8uC-PH-gTO"/>
+                            <constraint firstItem="hrx-I5-04y" firstAttribute="trailing" secondItem="qAj-LI-cUC" secondAttribute="trailing" id="BiX-6O-f3d"/>
+                            <constraint firstItem="hrx-I5-04y" firstAttribute="bottom" secondItem="qAj-LI-cUC" secondAttribute="bottom" id="HoB-dn-TCI"/>
+                            <constraint firstItem="j3x-Is-C04" firstAttribute="centerY" secondItem="hrx-I5-04y" secondAttribute="centerY" id="PMf-Wb-A0o"/>
+                            <constraint firstItem="qAj-LI-cUC" firstAttribute="leading" secondItem="hrx-I5-04y" secondAttribute="leading" id="Po0-ON-OaH"/>
+                            <constraint firstItem="qAj-LI-cUC" firstAttribute="top" secondItem="xtp-Vq-Gf3" secondAttribute="top" id="SCD-cD-TdU"/>
+                            <constraint firstItem="j3x-Is-C04" firstAttribute="centerX" secondItem="hrx-I5-04y" secondAttribute="centerX" id="hiy-R6-WJb"/>
+                            <constraint firstItem="j3x-Is-C04" firstAttribute="height" secondItem="hrx-I5-04y" secondAttribute="height" multiplier="0.5" id="zWr-u0-fCC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hrx-I5-04y"/>
+                    </view>
+                    <connections>
+                        <outlet property="darkBackground" destination="qAj-LI-cUC" id="gLn-wW-iSH"/>
+                        <outlet property="logInButton" destination="o86-bM-5Ek" id="sjf-Ti-PgU"/>
+                        <outlet property="mainContainer" destination="j3x-Is-C04" id="6Zg-li-UcV"/>
+                        <outlet property="passwordTextField" destination="AqM-Ea-dQ5" id="u23-BG-fc9"/>
+                        <outlet property="usernameTextField" destination="x5b-AX-VHC" id="Tz3-WJ-pp5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R3l-RA-sU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1120" y="921"/>
+        </scene>
         <!--Server Commands Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ServerCommandsController" id="BYZ-38-t0r" customClass="ServerCommandsController" customModule="Comy_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServerCommandsController" id="BYZ-38-t0r" customClass="ServerCommandsController" customModule="Comy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +244,7 @@
                                 <rect key="frame" x="0.0" y="126" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gd-SW-1Fs" customClass="NotificationView" customModule="Comy_iOS" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gd-SW-1Fs" customClass="NotificationView" customModule="Comy" customModuleProvider="target">
                                 <rect key="frame" x="10" y="782" width="394" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
