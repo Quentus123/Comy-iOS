@@ -32,6 +32,7 @@
 		66600B2024A0C11300374BEB /* BeautifulTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600B1F24A0C11300374BEB /* BeautifulTextField.swift */; };
 		66600B2224A0C14000374BEB /* BeautifulTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66600B2124A0C14000374BEB /* BeautifulTextField.xib */; };
 		66600B2424A0CA3E00374BEB /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600B2324A0CA3E00374BEB /* RoundedView.swift */; };
+		6679BB5A24A25A7400064894 /* CommandParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679BB5924A25A7400064894 /* CommandParameter.swift */; };
 		66C8FAAC249BDAFA00397933 /* AuthentificationTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */; };
 		66C8FAAE249BDB3200397933 /* AuthentificateUserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */; };
 		66C8FAB0249BDB6100397933 /* RefreshTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */; };
@@ -100,6 +101,7 @@
 		66600B1F24A0C11300374BEB /* BeautifulTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulTextField.swift; sourceTree = "<group>"; };
 		66600B2124A0C14000374BEB /* BeautifulTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeautifulTextField.xib; sourceTree = "<group>"; };
 		66600B2324A0CA3E00374BEB /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		6679BB5924A25A7400064894 /* CommandParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParameter.swift; sourceTree = "<group>"; };
 		66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationTokenMessage.swift; sourceTree = "<group>"; };
 		66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificateUserMessage.swift; sourceTree = "<group>"; };
 		66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenMessage.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		6615B76D2492304D006E2DE9 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				6679BB5424A25A3500064894 /* Params */,
 				6615B76E2492305E006E2DE9 /* Command.swift */,
 			);
 			path = Commands;
@@ -311,6 +314,14 @@
 				660F160C2493D465006790BF /* ServerServices.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6679BB5424A25A3500064894 /* Params */ = {
+			isa = PBXGroup;
+			children = (
+				6679BB5924A25A7400064894 /* CommandParameter.swift */,
+			);
+			path = Params;
 			sourceTree = "<group>";
 		};
 		66E170F8249CE76E0002EDAC /* ViewModels */ = {
@@ -619,6 +630,7 @@
 				6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */,
 				661186DB249898FE001BA0AF /* OnboardingController.swift in Sources */,
 				66C8FAAE249BDB3200397933 /* AuthentificateUserMessage.swift in Sources */,
+				6679BB5A24A25A7400064894 /* CommandParameter.swift in Sources */,
 				66600B1C24A0BBBF00374BEB /* LoginController.swift in Sources */,
 				66E170F7249CE7670002EDAC /* OnboardingViewModel.swift in Sources */,
 				6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */,

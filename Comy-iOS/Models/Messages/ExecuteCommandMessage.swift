@@ -11,5 +11,6 @@ import Foundation
 struct ExecuteCommandMessage: Message {
     let type: String = "ExecuteCommand"
     let commandName: String
+    let params: [String:String]
     let token: String?
 }

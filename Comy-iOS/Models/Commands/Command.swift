@@ -8,9 +8,11 @@
 
 import Foundation
 
-class Command: Codable {
+struct Command: Codable {
     let name: String
     let imageURL: String?
+    let mainParameter: CommandParameter?
+    let secondariesParameters: [CommandParameter]?
 }
 
 extension Command {
