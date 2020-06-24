@@ -1,53 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommandCell" customModule="Comy_iOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommandCell" customModule="Comy" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="pMO-0F-nYm" id="Ksf-pV-i94"/>
                 <outlet property="backgroundImageView" destination="oTb-b7-xVI" id="4qi-7D-P4M"/>
+                <outlet property="integerSelector" destination="2q6-7C-aFN" id="Lux-nG-Z60"/>
                 <outlet property="mainContainer" destination="IpB-l4-bTr" id="uaj-BJ-X1f"/>
                 <outlet property="nameLabel" destination="6I8-Sb-qsQ" id="deg-Zq-lZw"/>
+                <outlet property="selectorContainer" destination="wDF-ce-MSI" id="rPR-N3-MWP"/>
                 <outlet property="xibView" destination="iN0-l3-epB" id="9RT-II-llR"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpB-l4-bTr" userLabel="Main Container">
-                    <rect key="frame" x="-202" y="44" width="818" height="818"/>
+                    <rect key="frame" x="251.5" y="0.0" width="393" height="393"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTb-b7-xVI" userLabel="backgroundImageView">
-                            <rect key="frame" x="0.0" y="0.0" width="818" height="818"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I8-Sb-qsQ" userLabel="nameLabel">
-                            <rect key="frame" x="763.5" y="787" width="44.5" height="21"/>
+                            <rect key="frame" x="20" y="10" width="44.5" height="21"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDF-ce-MSI" userLabel="SelectorContainer">
+                            <rect key="frame" x="236" y="314.5" width="157" height="78.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2q6-7C-aFN" customClass="IntegerSelector" customModule="Comy" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="157" height="78.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonsTintColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="2q6-7C-aFN" secondAttribute="bottom" id="0of-vS-bO6"/>
+                                <constraint firstAttribute="trailing" secondItem="2q6-7C-aFN" secondAttribute="trailing" id="g5G-N9-eR6"/>
+                                <constraint firstItem="2q6-7C-aFN" firstAttribute="leading" secondItem="wDF-ce-MSI" secondAttribute="leading" id="gcV-m9-RRe"/>
+                                <constraint firstItem="2q6-7C-aFN" firstAttribute="top" secondItem="wDF-ce-MSI" secondAttribute="top" id="t0K-gd-sRQ"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="IpB-l4-bTr" secondAttribute="height" id="8dY-Bd-6wW"/>
-                        <constraint firstAttribute="trailing" secondItem="6I8-Sb-qsQ" secondAttribute="trailing" constant="10" id="DQq-bR-8N6"/>
-                        <constraint firstAttribute="trailing" secondItem="oTb-b7-xVI" secondAttribute="trailing" id="M0s-PC-swx"/>
-                        <constraint firstAttribute="bottom" secondItem="oTb-b7-xVI" secondAttribute="bottom" id="Qha-1k-aVE"/>
+                        <constraint firstItem="wDF-ce-MSI" firstAttribute="height" secondItem="IpB-l4-bTr" secondAttribute="height" multiplier="0.2" id="DCA-Lh-z6I"/>
+                        <constraint firstItem="6I8-Sb-qsQ" firstAttribute="leading" secondItem="IpB-l4-bTr" secondAttribute="leading" constant="20" id="DQq-bR-8N6"/>
+                        <constraint firstItem="oTb-b7-xVI" firstAttribute="trailing" secondItem="IpB-l4-bTr" secondAttribute="trailing" id="M0s-PC-swx"/>
+                        <constraint firstAttribute="trailing" secondItem="wDF-ce-MSI" secondAttribute="trailing" id="OOZ-GD-8hG"/>
+                        <constraint firstItem="oTb-b7-xVI" firstAttribute="bottom" secondItem="IpB-l4-bTr" secondAttribute="bottom" id="Qha-1k-aVE"/>
                         <constraint firstItem="oTb-b7-xVI" firstAttribute="leading" secondItem="IpB-l4-bTr" secondAttribute="leading" id="Zto-dz-QDh"/>
-                        <constraint firstItem="6I8-Sb-qsQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IpB-l4-bTr" secondAttribute="leading" constant="20" id="sZ0-Mv-hhy"/>
-                        <constraint firstAttribute="bottom" secondItem="6I8-Sb-qsQ" secondAttribute="bottom" constant="10" id="sw0-K9-oXa"/>
+                        <constraint firstItem="wDF-ce-MSI" firstAttribute="width" secondItem="IpB-l4-bTr" secondAttribute="width" multiplier="0.4" id="dll-2r-DiN"/>
+                        <constraint firstItem="wDF-ce-MSI" firstAttribute="bottom" secondItem="IpB-l4-bTr" secondAttribute="bottom" id="jGG-vu-CZh"/>
+                        <constraint firstItem="6I8-Sb-qsQ" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="IpB-l4-bTr" secondAttribute="trailing" constant="-10" id="sZ0-Mv-hhy"/>
+                        <constraint firstItem="6I8-Sb-qsQ" firstAttribute="top" secondItem="IpB-l4-bTr" secondAttribute="top" constant="10" id="sw0-K9-oXa"/>
                         <constraint firstItem="oTb-b7-xVI" firstAttribute="top" secondItem="IpB-l4-bTr" secondAttribute="top" id="wr9-pG-aaz"/>
                     </constraints>
                 </view>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pMO-0F-nYm">
-                    <rect key="frame" x="197" y="443" width="20" height="20"/>
+                    <rect key="frame" x="438" y="186.5" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -8,7 +8,18 @@
 
 import Foundation
 
-struct Command: Codable {
+struct Command: Codable, Hashable {
+    
+    //In Comy Server framework we cannot launch server if two commands have the same name
+    static func == (lhs: Command, rhs: Command) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+    }
+    
     let name: String
     let imageURL: String?
     let mainParameter: CommandParameter?

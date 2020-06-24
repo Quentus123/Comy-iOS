@@ -41,6 +41,7 @@ class ServerCommandsController: UIViewController{
         
         commandsTableView.register(CommandCell.self, forCellReuseIdentifier: "CommandCell")
         commandsTableView.rx.setDelegate(self).disposed(by: disposeBag)
+        commandsTableView.allowsSelection = false
         
         serverViewModel.serverName
             .bind(to: nameServerLabel.rx.text).disposed(by: disposeBag)
@@ -109,8 +110,26 @@ class ServerCommandsController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         serverViewModel.commands.bind(to: commandsTableView.rx.items(cellIdentifier: "CommandCell", cellType: CommandCell.self)) { [weak self] row, item, cell in
-            
             guard let self = self else { return }
+            
+            cell
+            .valueChanged
+            .subscribe(onNext: { [weak self] value in
+                guard let self = self else { return }
+                guard let paramName = item.mainParameter?.name else { return }
+                self.serverViewModel.setParam(for: item, param: (name: paramName, value: value))
+            })
+            .disposed(by: self.disposeBag)
+            
+            let selectorType: CommandCell.SelectorType
+            switch item.mainParameter?.typeCode {
+            case CommandCell.SelectorType.Integer.rawValue:
+                selectorType = .Integer
+            default:
+                selectorType = .None
+            }
+            cell.setSelectorType(type: selectorType, defaultValue: item.mainParameter?.defaultValue)
+            
             cell.nameLabel.text = item.name
             self.serverViewModel.imagesData
                 .filter { (dict) -> Bool in
@@ -129,34 +148,42 @@ class ServerCommandsController: UIViewController{
                     cell.backgroundImageView.backgroundColor = .clear
                 })
                 .disposed(by: self.disposeBag)
+            
             cell
-                .rx
-                .tapGesture()
-                .when(.recognized)
-                .subscribe(onNext: { [weak self] _ in
+                .onTouch
+                .subscribe(onNext: { [weak self] in
                     guard let self = self else { return }
                     self.hideNotificationView()
-                    self.serverViewModel.executeCommand(command: item)
+                    self.serverViewModel.executeCommand(command: item, params: self.serverViewModel.commandsParams[item] ?? [:])
                 })
                 .disposed(by: self.disposeBag)
+            
             cell
                 .rx
                 .longPressGesture(configuration: { (gestureReco, _) in
+                    gestureReco.cancelsTouchesInView = false
                     gestureReco.minimumPressDuration = 0.01
                     gestureReco.numberOfTouchesRequired = 1
                     gestureReco.numberOfTapsRequired = 0
                     gestureReco.allowableMovement = 1.0
                 })
                 .when(.began, .ended)
-                .subscribe(onNext: { pan in
-                    UIView.animate(withDuration: 0.3) {
-                        switch pan.state {
-                        case .began:
-                            cell.mainContainer.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
-                        case .ended:
-                            cell.mainContainer.transform = CGAffineTransform(scaleX: 1, y: 1)
-                        default:
-                            break
+                .subscribe(onNext: { [weak cell] pan in
+                    guard let cell = cell else { return }
+                    
+                    let touchLocation = pan.location(in: cell)
+                    let selectorContainerRect = cell.selectorContainer.superview!.convert(cell.selectorContainer.frame, to: cell)
+                    
+                    if (!selectorContainerRect.contains(touchLocation)) || (selectorType == .None) {
+                        UIView.animate(withDuration: 0.3) {
+                            switch pan.state {
+                            case .began:
+                                cell.mainContainer.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
+                            case .ended:
+                                cell.mainContainer.transform = CGAffineTransform(scaleX: 1, y: 1)
+                            default:
+                                break
+                            }
                         }
                     }
                 })

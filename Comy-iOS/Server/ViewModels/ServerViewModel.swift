@@ -19,17 +19,25 @@ class ServerViewModel {
     var isConnectionCancelled: Bool = false
     let commandResponse: PublishSubject<CommandResponse> = PublishSubject()
     var services: ServerServices
+    var commandsParams: [Command:[String:String]] = [:]
     
     init(services: ServerServices){
         self.services = services
         services.refreshState()
     }
     
-    func executeCommand(command: Command){
+    func executeCommand(command: Command, params: [String:String]){
         let commandsLoadingValue = (try? commandsLoading.value()) ?? []
         guard !commandsLoadingValue.contains(command.name) else { return }
         commandsLoading.onNext(commandsLoadingValue + [command.name])
-        services.executeCommand(command: command)
+        services.executeCommand(command: command, params: commandsParams[command] ?? [:])
+    }
+    
+    func setParam(for command: Command, param: (name: String, value: String)) {
+        if commandsParams[command] == nil {
+            commandsParams[command] = [:]
+        }
+        commandsParams[command]![param.name] = param.value
     }
     
     func authentificate(id: String, password: String) {

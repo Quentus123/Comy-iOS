@@ -14,8 +14,8 @@ class ServerServices {
     private var socket: WebSocket
     private var token: String?
     private var refreshToken: String?
-    private var currentExecutionCommands: [Command] = []
-    private var waitingRefreshTokenCommands: [Command] = []
+    private var currentExecutionCommands: [Command:[String:String]] = [:]
+    private var waitingRefreshTokenCommands: [Command:[String:String]] = [:]
     private var isWaitingRefreshTokenToGetState = false
     weak var delegate: ServerServicesDelegate?
     
@@ -41,14 +41,14 @@ class ServerServices {
             } else if response.message == "refreshed token" { //we need to reexecute commands and get state if needed
                 print("Token successfully refreshed, executing commands : \(waitingRefreshTokenCommands)")
                 for command in waitingRefreshTokenCommands {
-                    executeCommand(command: command)
+                    executeCommand(command: command.key, params: command.value)
                 }
                 if isWaitingRefreshTokenToGetState {
                     refreshState()
                 }
             }
         } else if response.message == "error with refresh token" { //auth tokens are not valid
-            waitingRefreshTokenCommands = []
+            waitingRefreshTokenCommands = [:]
             self.disconnect()
         } else {
             delegate?.onAuthentification(success: false)
@@ -68,9 +68,9 @@ class ServerServices {
         socket.write(string: String(data: try! JSONEncoder().encode(RefreshTokenMessage(refreshToken: refreshToken)), encoding: .utf8)!)
     }
     
-    func executeCommand(command: Command) {
-        currentExecutionCommands.append(command)
-        socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name, params: ["Number of dices" : "2"], token: token)), encoding: .utf8)!)
+    func executeCommand(command: Command, params: [String:String]) {
+        currentExecutionCommands[command] = params
+        socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name, params: params, token: token)), encoding: .utf8)!)
     }
     
     deinit {
@@ -100,19 +100,22 @@ extension ServerServices: WebSocketDelegate {
                         delegate?.didReceiveNewState(state: serverStateResponse)
                     }
                 } else if let commandResponse = try? JSONDecoder().decode(CommandResponse.self, from: dataEvent){
-                    if let authError = commandResponse.authError, authError.tokenExpiredError, !waitingRefreshTokenCommands.map(\.name).contains(commandResponse.commandName) { //need to refresh token and restart command
-                        guard let commandToReexecuteAfterRefresh = currentExecutionCommands.first(where: {$0.name == commandResponse.commandName}) else { return }
+                    if let authError = commandResponse.authError, authError.tokenExpiredError, !waitingRefreshTokenCommands.map(\.key.name).contains(commandResponse.commandName) { //need to refresh token and restart command
+                        guard let commandToReexecuteAfterRefresh = currentExecutionCommands.first(where: {$0.key.name == commandResponse.commandName}) else { return }
                         print("ERROR: TOKEN EXPIRED ! refreshing token...")
-                        waitingRefreshTokenCommands.append(commandToReexecuteAfterRefresh)
+                        waitingRefreshTokenCommands[commandToReexecuteAfterRefresh.key] = commandToReexecuteAfterRefresh.value
                         self.refreshAuthToken()
                     } else { //Command execution completed (successfully or not)
-                        currentExecutionCommands.removeAll(where: {$0.name == commandResponse.commandName})
-                        waitingRefreshTokenCommands.removeAll(where: {$0.name == commandResponse.commandName})
+                        if let currentExecutionCommand = currentExecutionCommands.keys.first(where: {$0.name == commandResponse.commandName}) {
+                            currentExecutionCommands.removeValue(forKey: currentExecutionCommand)
+                        }
+                        if let currentWaitingCommand = waitingRefreshTokenCommands.keys.first(where: {$0.name == commandResponse.commandName}) {
+                            waitingRefreshTokenCommands.removeValue(forKey: currentWaitingCommand)
+                        }
                         print("waitingRefreshTokenCommands: \(waitingRefreshTokenCommands)")
                         print("currentExecutionCommands: \(currentExecutionCommands)")
                         delegate?.didReceiveCommandResult(response: commandResponse)
                     }
-                    
                 }
             }
         case .connected(_):
