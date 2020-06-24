@@ -70,7 +70,7 @@ class ServerServices {
     
     func executeCommand(command: Command) {
         currentExecutionCommands.append(command)
-        socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name, params: ["Number of dices" : 2"], token: token)), encoding: .utf8)!)
+        socket.write(string: String(data: try! JSONEncoder().encode(ExecuteCommandMessage(commandName: command.name, params: ["Number of dices" : "2"], token: token)), encoding: .utf8)!)
     }
     
     deinit {

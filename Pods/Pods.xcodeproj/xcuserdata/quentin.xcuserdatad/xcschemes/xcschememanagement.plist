@@ -9,12 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Comy-iOSTests.xcscheme</key>
+		<key>Pods-ComyTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Comy-iOSUITests.xcscheme</key>
+		<key>Pods-ComyUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

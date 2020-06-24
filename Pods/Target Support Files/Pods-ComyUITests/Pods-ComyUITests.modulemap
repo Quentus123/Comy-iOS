@@ -1,0 +1,6 @@
+framework module Pods_ComyUITests {
+  umbrella header "Pods-ComyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

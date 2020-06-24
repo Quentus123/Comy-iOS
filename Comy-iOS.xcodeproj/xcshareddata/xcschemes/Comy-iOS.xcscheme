@@ -49,6 +49,26 @@
                ReferencedContainer = "container:Comy-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "66C14FCA24A349F5000917D1"
+               BuildableName = "ComyTests.xctest"
+               BlueprintName = "ComyTests"
+               ReferencedContainer = "container:Comy-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "66C14FD824A34A03000917D1"
+               BuildableName = "ComyUITests.xctest"
+               BlueprintName = "ComyUITests"
+               ReferencedContainer = "container:Comy-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -12,12 +12,12 @@ target 'Comy-iOS' do
   pod 'RxCocoa', '~> 5'
   pod "RxGesture"
 
-  target 'Comy-iOSTests' do
+  target 'ComyTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'Comy-iOSUITests' do
+  target 'ComyUITests' do
     # Pods for testing
     inherit! :search_paths
   end
