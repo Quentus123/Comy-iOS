@@ -128,9 +128,24 @@ class ServerCommandsController: UIViewController{
             default:
                 selectorType = .None
             }
-            cell.setSelectorType(type: selectorType, defaultValue: item.mainParameter?.defaultValue)
+            cell.setSelectorType(type: selectorType)
+            cell.isSettingsButtonEnabled = item.secondariesParameters.count > 0
             
             cell.nameLabel.text = item.name
+            
+            if let mainParameter = item.mainParameter {
+                self.serverViewModel.commandsParams
+                .filter({$0.keys.contains(item)})
+                .map({$0[item]!})
+                .filter({$0.keys.contains(mainParameter.name)})
+                .map({$0[mainParameter.name]!})
+                .subscribe(onNext: { [weak cell] mainParam in
+                    guard let cell = cell else { return }
+                    cell.changeValueOfMainParameter(value: mainParam)
+                })
+                .disposed(by: self.disposeBag)
+            }
+            
             self.serverViewModel.imagesData
                 .filter { (dict) -> Bool in
                     dict.keys.contains(item.name)
@@ -154,7 +169,20 @@ class ServerCommandsController: UIViewController{
                 .subscribe(onNext: { [weak self] in
                     guard let self = self else { return }
                     self.hideNotificationView()
-                    self.serverViewModel.executeCommand(command: item, params: self.serverViewModel.commandsParams[item] ?? [:])
+                    self.serverViewModel.executeCommand(command: item)
+                })
+                .disposed(by: self.disposeBag)
+            
+            cell
+                .onTapSetting
+                .subscribe(onNext: { [weak self] in
+                    guard let self = self else { return }
+                    let controller = self.storyboard!.instantiateViewController(identifier: "CommandParamsController") as! CommandParamsController
+                    controller.command = item
+                    let params = (try? self.serverViewModel.commandsParams.value())?[item] ?? [:]
+                    controller.params = params
+                    controller.delegate = self
+                    self.present(controller, animated: true)
                 })
                 .disposed(by: self.disposeBag)
             
@@ -243,4 +271,12 @@ extension ServerCommandsController: UITableViewDelegate {
         return 240
     }
     
+}
+
+extension ServerCommandsController: CommandParamsControllerDelegate {
+    func onEditingSettings(command: Command, params: [String : String]) {
+        for param in params {
+            self.serverViewModel.setParam(for: command, param: (name: param.key, value: param.value))
+        }
+    }
 }

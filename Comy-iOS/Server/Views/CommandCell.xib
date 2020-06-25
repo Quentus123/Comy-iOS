@@ -15,6 +15,7 @@
                 <outlet property="mainContainer" destination="IpB-l4-bTr" id="uaj-BJ-X1f"/>
                 <outlet property="nameLabel" destination="6I8-Sb-qsQ" id="deg-Zq-lZw"/>
                 <outlet property="selectorContainer" destination="wDF-ce-MSI" id="rPR-N3-MWP"/>
+                <outlet property="settingsButton" destination="Ymz-5C-pVM" id="MOw-ap-JBR"/>
                 <outlet property="xibView" destination="iN0-l3-epB" id="9RT-II-llR"/>
             </connections>
         </placeholder>
@@ -24,10 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpB-l4-bTr" userLabel="Main Container">
-                    <rect key="frame" x="251.5" y="0.0" width="393" height="393"/>
+                    <rect key="frame" x="261.5" y="10" width="373" height="373"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTb-b7-xVI" userLabel="backgroundImageView">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="373"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I8-Sb-qsQ" userLabel="nameLabel">
                             <rect key="frame" x="20" y="10" width="44.5" height="21"/>
@@ -36,10 +37,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDF-ce-MSI" userLabel="SelectorContainer">
-                            <rect key="frame" x="236" y="314.5" width="157" height="78.5"/>
+                            <rect key="frame" x="224" y="298.5" width="149" height="74.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2q6-7C-aFN" customClass="IntegerSelector" customModule="Comy" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="157" height="78.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="149" height="74.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="buttonsTintColor">
@@ -79,17 +80,48 @@
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pMO-0F-nYm">
                     <rect key="frame" x="438" y="186.5" width="20" height="20"/>
                 </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="StD-qf-qQr" userLabel="RightSideContainer">
+                    <rect key="frame" x="634.5" y="0.0" width="261.5" height="393"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymz-5C-pVM">
+                            <rect key="frame" x="10" y="176.5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Ymz-5C-pVM" secondAttribute="height" multiplier="1:1" id="3Au-g9-nKN"/>
+                                <constraint firstAttribute="height" constant="40" id="iMy-Td-QsE"/>
+                            </constraints>
+                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <state key="normal" image="gear" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                            </state>
+                            <connections>
+                                <action selector="onTapSettingsAction:" destination="-1" eventType="touchUpInside" id="wtB-Og-H1H"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="Ymz-5C-pVM" firstAttribute="centerY" secondItem="StD-qf-qQr" secondAttribute="centerY" id="Smk-9K-bT5"/>
+                        <constraint firstItem="Ymz-5C-pVM" firstAttribute="leading" secondItem="StD-qf-qQr" secondAttribute="leading" constant="10" id="pL2-6g-cUY"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="IpB-l4-bTr" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="6WM-na-DeS"/>
+                <constraint firstItem="StD-qf-qQr" firstAttribute="leading" secondItem="IpB-l4-bTr" secondAttribute="trailing" id="2CI-vm-GgC"/>
+                <constraint firstItem="IpB-l4-bTr" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.95" id="6WM-na-DeS"/>
                 <constraint firstItem="pMO-0F-nYm" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Dra-mS-qzX"/>
                 <constraint firstItem="IpB-l4-bTr" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="UFI-gK-PJN"/>
                 <constraint firstItem="pMO-0F-nYm" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="gkl-Xa-lc6"/>
+                <constraint firstAttribute="trailing" secondItem="StD-qf-qQr" secondAttribute="trailing" id="hMz-Wn-pJ5"/>
                 <constraint firstItem="IpB-l4-bTr" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="jaj-nC-Ews"/>
+                <constraint firstItem="StD-qf-qQr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="z1X-wz-Qbd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="StD-qf-qQr" secondAttribute="bottom" id="zko-lX-TXW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="133" y="154"/>
         </view>
     </objects>
+    <resources>
+        <image name="gear" catalog="system" width="128" height="119"/>
+    </resources>
 </document>

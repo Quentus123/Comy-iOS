@@ -31,7 +31,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5g-sm-wSo">
                                 <rect key="frame" x="172" y="414" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Connect"/>
+                                <state key="normal" title="Connect">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2X-Rt-7oe" customClass="NotificationView" customModule="Comy" customModuleProvider="target">
                                 <rect key="frame" x="10" y="782" width="394" height="70"/>
@@ -200,6 +202,68 @@
             </objects>
             <point key="canvasLocation" x="-1120" y="921"/>
         </scene>
+        <!--Command Params Controller-->
+        <scene sceneID="oLL-ai-IPH">
+            <objects>
+                <viewController storyboardIdentifier="CommandParamsController" id="DTh-fr-hFA" customClass="CommandParamsController" customModule="Comy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tet-ku-ThQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HHQ-4M-ZRe">
+                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmy-di-ez2" userLabel="Bar container">
+                                <rect key="frame" x="0.0" y="44" width="414" height="82"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="a4L-HO-5wW">
+                                        <rect key="frame" x="182" y="29" width="50.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-LH-qOP">
+                                        <rect key="frame" x="361.5" y="28" width="22.5" height="26"/>
+                                        <state key="normal" image="arrow.counterclockwise" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JOp-LH-qOP" secondAttribute="trailing" constant="30" id="8MG-Mr-Uhy"/>
+                                    <constraint firstItem="a4L-HO-5wW" firstAttribute="centerX" secondItem="nmy-di-ez2" secondAttribute="centerX" id="OE9-AE-ImC"/>
+                                    <constraint firstItem="a4L-HO-5wW" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="JOp-LH-qOP" secondAttribute="leading" constant="-10" id="haa-RZ-hHP"/>
+                                    <constraint firstItem="a4L-HO-5wW" firstAttribute="centerY" secondItem="nmy-di-ez2" secondAttribute="centerY" id="rai-N8-xdn"/>
+                                    <constraint firstItem="JOp-LH-qOP" firstAttribute="centerY" secondItem="nmy-di-ez2" secondAttribute="centerY" id="yid-mv-jAE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HHQ-4M-ZRe" firstAttribute="leading" secondItem="sUv-Hb-wwf" secondAttribute="leading" id="5Qc-cS-SVE"/>
+                            <constraint firstItem="sUv-Hb-wwf" firstAttribute="bottom" secondItem="HHQ-4M-ZRe" secondAttribute="bottom" id="80q-d0-wmw"/>
+                            <constraint firstItem="HHQ-4M-ZRe" firstAttribute="top" secondItem="nmy-di-ez2" secondAttribute="bottom" id="8O8-JG-zEm"/>
+                            <constraint firstItem="nmy-di-ez2" firstAttribute="leading" secondItem="sUv-Hb-wwf" secondAttribute="leading" id="a6e-Wo-N7R"/>
+                            <constraint firstItem="nmy-di-ez2" firstAttribute="trailing" secondItem="sUv-Hb-wwf" secondAttribute="trailing" id="aCU-r9-HG7"/>
+                            <constraint firstItem="HHQ-4M-ZRe" firstAttribute="centerX" secondItem="sUv-Hb-wwf" secondAttribute="centerX" id="inJ-Yw-cnG"/>
+                            <constraint firstItem="nmy-di-ez2" firstAttribute="height" secondItem="sUv-Hb-wwf" secondAttribute="height" multiplier="0.1" id="lLF-pe-FTs"/>
+                            <constraint firstItem="nmy-di-ez2" firstAttribute="top" secondItem="sUv-Hb-wwf" secondAttribute="top" id="mMK-7F-lm9"/>
+                            <constraint firstItem="sUv-Hb-wwf" firstAttribute="trailing" secondItem="HHQ-4M-ZRe" secondAttribute="trailing" id="t3n-Qt-pfg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sUv-Hb-wwf"/>
+                    </view>
+                    <connections>
+                        <outlet property="resetParamsButton" destination="JOp-LH-qOP" id="d36-kM-Bac"/>
+                        <outlet property="tableView" destination="HHQ-4M-ZRe" id="pLT-M2-bzR"/>
+                        <outlet property="titleLabel" destination="a4L-HO-5wW" id="j0f-42-oIM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efM-UH-TbI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="921"/>
+        </scene>
         <!--Server Commands Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -281,6 +345,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.counterclockwise" catalog="system" width="115" height="128"/>
         <image name="logo" width="512" height="512"/>
         <image name="power" catalog="system" width="128" height="124"/>
     </resources>

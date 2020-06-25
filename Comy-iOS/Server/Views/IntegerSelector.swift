@@ -19,7 +19,7 @@ class IntegerSelector: UIView {
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     
-    var valueChanged: BehaviorSubject<Int> = BehaviorSubject(value: 0)
+    var valueChanged: PublishSubject<Int> = PublishSubject()
     var value: Int {
         get {
             return Int(label.text ?? "0") ?? 0

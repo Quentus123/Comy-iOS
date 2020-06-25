@@ -13,7 +13,7 @@ import RxSwift
 
 class ServerViewModelTest: XCTestCase {
 
-     private let testStateResponseJSON = "{\"commands\" : [{\"imageURL\" : \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/6sided_dice.jpg/800px-6sided_dice.jpg\", \"mainParameter\" : {\"defaultValue\" : \"1\", \"name\" : \"Number of dices\", \"typeCode\" : 1}, \"name\" : \"Fake dice\"}, {\"name\" : \"Test1\"}, {\"name\" : \"Test2\"}], \"name\" : \"Test server\", \"type\" : \"ServerStateResponse\"}"
+     private let testStateResponseJSON = "{\"commands\" : [{\"imageURL\" : \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/6sided_dice.jpg/800px-6sided_dice.jpg\", \"mainParameter\" : {\"defaultValue\" : \"1\", \"name\" : \"Number of dices\", \"typeCode\" : 1}, \"name\" : \"Dices simulator\", \"secondariesParameters\" : [{\"defaultValue\" : \"1\", \"name\" : \"Minimum value (included)\", \"typeCode\" : 1}, {\"defaultValue\" : \"6\", \"name\" : \"Maximum value (included)\", \"typeCode\" : 1}]}, {\"name\" : \"Test1\"}, {\"name\" : \"Test2\"}], \"name\" : \"Test server\", \"type\" : \"ServerStateResponse\"}"
        private let testCommandResponseJSON = "{\"commandName\" : \"Test1\", \"result\" : {\"message\" : \"\", \"status\" : {\"message\" : \"OK\", \"success\" : true}}, \"type\" : \"CommandResponse\"}"
        
        private let disposeBag = DisposeBag()

@@ -39,6 +39,10 @@
 		66C14FE424A34B2D000917D1 /* ServerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C14FE324A34B2D000917D1 /* ServerViewModelTest.swift */; };
 		66C14FE624A357BB000917D1 /* IntegerSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66C14FE524A357BB000917D1 /* IntegerSelector.xib */; };
 		66C14FE824A35882000917D1 /* IntegerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C14FE724A35882000917D1 /* IntegerSelector.swift */; };
+		66C20F6324A4A949007369F3 /* IntegerSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C20F6224A4A949007369F3 /* IntegerSettingCell.swift */; };
+		66C20F6524A4A95C007369F3 /* IntegerSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66C20F6424A4A95C007369F3 /* IntegerSettingCell.xib */; };
+		66C20F6724A4AAAD007369F3 /* CommandParamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C20F6624A4AAAD007369F3 /* CommandParamsController.swift */; };
+		66C20F6924A4AD07007369F3 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C20F6824A4AD07007369F3 /* SettingCell.swift */; };
 		66C8FAAC249BDAFA00397933 /* AuthentificationTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */; };
 		66C8FAAE249BDB3200397933 /* AuthentificateUserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */; };
 		66C8FAB0249BDB6100397933 /* RefreshTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */; };
@@ -109,6 +113,10 @@
 		66C14FE324A34B2D000917D1 /* ServerViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModelTest.swift; sourceTree = "<group>"; };
 		66C14FE524A357BB000917D1 /* IntegerSelector.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntegerSelector.xib; sourceTree = "<group>"; };
 		66C14FE724A35882000917D1 /* IntegerSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerSelector.swift; sourceTree = "<group>"; };
+		66C20F6224A4A949007369F3 /* IntegerSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerSettingCell.swift; sourceTree = "<group>"; };
+		66C20F6424A4A95C007369F3 /* IntegerSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntegerSettingCell.xib; sourceTree = "<group>"; };
+		66C20F6624A4AAAD007369F3 /* CommandParamsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParamsController.swift; sourceTree = "<group>"; };
+		66C20F6824A4AD07007369F3 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationTokenMessage.swift; sourceTree = "<group>"; };
 		66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificateUserMessage.swift; sourceTree = "<group>"; };
 		66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenMessage.swift; sourceTree = "<group>"; };
@@ -291,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				6615B76B24923017006E2DE9 /* ServerCommandsController.swift */,
+				66C20F6624A4AAAD007369F3 /* CommandParamsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -298,8 +307,13 @@
 		6642203C24976D7A00CD67D8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66C14FE524A357BB000917D1 /* IntegerSelector.xib */,
+				66C14FE724A35882000917D1 /* IntegerSelector.swift */,
 				6642203E24976DDD00CD67D8 /* CommandCell.xib */,
 				6642204024976E6B00CD67D8 /* CommandCell.swift */,
+				66C20F6224A4A949007369F3 /* IntegerSettingCell.swift */,
+				66C20F6424A4A95C007369F3 /* IntegerSettingCell.xib */,
+				66C20F6824A4AD07007369F3 /* SettingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,8 +378,6 @@
 				66600B1F24A0C11300374BEB /* BeautifulTextField.swift */,
 				66600B2124A0C14000374BEB /* BeautifulTextField.xib */,
 				66600B2324A0CA3E00374BEB /* RoundedView.swift */,
-				66C14FE524A357BB000917D1 /* IntegerSelector.xib */,
-				66C14FE724A35882000917D1 /* IntegerSelector.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -517,6 +529,7 @@
 				6615B7442492222E006E2DE9 /* LaunchScreen.storyboard in Resources */,
 				66600B2224A0C14000374BEB /* BeautifulTextField.xib in Resources */,
 				6615B7412492222E006E2DE9 /* Assets.xcassets in Resources */,
+				66C20F6524A4A95C007369F3 /* IntegerSettingCell.xib in Resources */,
 				6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */,
 				6642203F24976DDD00CD67D8 /* CommandCell.xib in Resources */,
 				66E7108A2498F4EC0022D9EA /* NotificationView.xib in Resources */,
@@ -657,10 +670,13 @@
 				66600B1C24A0BBBF00374BEB /* LoginController.swift in Sources */,
 				66E170F7249CE7670002EDAC /* OnboardingViewModel.swift in Sources */,
 				66C14FE824A35882000917D1 /* IntegerSelector.swift in Sources */,
+				66C20F6924A4AD07007369F3 /* SettingCell.swift in Sources */,
 				6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */,
 				66C8FAB4249BDCA700397933 /* ServerInfoResponse.swift in Sources */,
 				6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */,
 				6615B76F2492305E006E2DE9 /* Command.swift in Sources */,
+				66C20F6324A4A949007369F3 /* IntegerSettingCell.swift in Sources */,
+				66C20F6724A4AAAD007369F3 /* CommandParamsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

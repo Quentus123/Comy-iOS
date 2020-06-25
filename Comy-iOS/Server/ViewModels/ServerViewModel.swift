@@ -19,25 +19,29 @@ class ServerViewModel {
     var isConnectionCancelled: Bool = false
     let commandResponse: PublishSubject<CommandResponse> = PublishSubject()
     var services: ServerServices
-    var commandsParams: [Command:[String:String]] = [:]
+    var commandsParams: BehaviorSubject<[Command:[String:String]]> = BehaviorSubject(value: [:])
     
     init(services: ServerServices){
         self.services = services
         services.refreshState()
     }
     
-    func executeCommand(command: Command, params: [String:String]){
+    func executeCommand(command: Command){
         let commandsLoadingValue = (try? commandsLoading.value()) ?? []
         guard !commandsLoadingValue.contains(command.name) else { return }
         commandsLoading.onNext(commandsLoadingValue + [command.name])
-        services.executeCommand(command: command, params: commandsParams[command] ?? [:])
+        let commandParams = (try? commandsParams.value())?[command] ?? [:]
+        services.executeCommand(command: command, params: commandParams)
     }
     
     func setParam(for command: Command, param: (name: String, value: String)) {
-        if commandsParams[command] == nil {
-            commandsParams[command] = [:]
+        var commandsParamsValue = (try? commandsParams.value()) ?? [:]
+        if commandsParamsValue[command] == nil {
+            commandsParamsValue[command] = [:]
         }
-        commandsParams[command]![param.name] = param.value
+        commandsParamsValue[command]![param.name] = param.value
+        
+        commandsParams.onNext(commandsParamsValue)
     }
     
     func authentificate(id: String, password: String) {
@@ -71,6 +75,12 @@ extension ServerViewModel: ServerServicesDelegate {
         serverName.onNext(state.name)
         commands.onNext(state.commands)
         for command in state.commands {
+            var allParams = command.mainParameter != nil ? [command.mainParameter!] : []
+            allParams.append(contentsOf: command.secondariesParameters)
+            for param in allParams {
+                setParam(for: command, param: (name: param.name, value: param.defaultValue))
+            }
+            
             command.downloadImageData { (data) in
                 var dict = (try? self.imagesData.value()) ?? [:]
                 dict[command.name] = data

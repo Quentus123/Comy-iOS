@@ -23,14 +23,22 @@ class CommandCell: UITableViewCell {
     @IBOutlet weak var mainContainer: UIView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var selectorContainer: UIView!
     @IBOutlet weak var integerSelector: IntegerSelector!
     
     var selectorType: SelectorType = .None
+    var isSettingsButtonEnabled = false {
+        didSet {
+            settingsButton.isHidden = !isSettingsButtonEnabled
+            settingsButton.isEnabled = isSettingsButtonEnabled
+        }
+    }
     
     var onTouch: PublishSubject<Void> = PublishSubject()
     var valueChanged: PublishSubject<String> = PublishSubject()
+    var onTapSetting: PublishSubject<Void> = PublishSubject()
     private var disposeBag = DisposeBag() //will be reset in prepareForReuse
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -51,14 +59,20 @@ class CommandCell: UITableViewCell {
         
         selectorContainer.backgroundColor = selectorContainer.backgroundColor?.withAlphaComponent(0.7)
         
-        integerSelector.valueChanged
-            .subscribe(onNext: { [weak self] intValue in
-                guard let self = self else { return }
-                self.valueChanged.onNext(String(intValue))
-            })
-            .disposed(by: disposeBag)
+        createRxSubscriptions()
+        settingsButton.imageView?.contentMode = .scaleAspectFit
+        isSettingsButtonEnabled = false
         
         layoutIfNeeded()
+    }
+    
+    private func createRxSubscriptions() {
+        integerSelector.valueChanged
+        .subscribe(onNext: { [weak self] intValue in
+            guard let self = self else { return }
+            self.valueChanged.onNext(String(intValue))
+        })
+        .disposed(by: disposeBag)
     }
     
     override func layoutSubviews() {
@@ -68,7 +82,11 @@ class CommandCell: UITableViewCell {
         mainContainer.layer.cornerRadius = 10
     }
     
-    func setSelectorType(type: SelectorType, defaultValue: String? = nil) {
+    @IBAction func onTapSettingsAction(_ sender: Any) {
+        onTapSetting.onNext(())
+    }
+    
+    func setSelectorType(type: SelectorType) {
         selectorContainer.isHidden = type == .None
         selectorContainer.isUserInteractionEnabled = type != .None
         integerSelector.isHidden = true
@@ -78,13 +96,21 @@ class CommandCell: UITableViewCell {
         case .Integer:
             integerSelector.isHidden = false
             integerSelector.isUserInteractionEnabled = true
-            let numberDefaultValue = Int(defaultValue ?? "0")
-            integerSelector.value = numberDefaultValue ?? 0
         default:
             break
         }
         
         selectorType = type
+    }
+    
+    
+    func changeValueOfMainParameter(value: String) {
+        switch selectorType {
+        case .Integer:
+            integerSelector.label.text = String(Int(value) ?? 0)
+        default:
+            break //None (or type not implemented yet)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -93,16 +119,16 @@ class CommandCell: UITableViewCell {
         let touch = touches.first!
         let touchLocation = touch.location(in: self)
         let selectorContainerRect = selectorContainer.superview!.convert(selectorContainer.frame, to: self)
+        let settingsButtonRect = settingsButton.superview!.convert(settingsButton.frame, to: self)
         
-        if (!selectorContainerRect.contains(touchLocation)) || (selectorType == .None) {
+        if ((!selectorContainerRect.contains(touchLocation)) || (selectorType == .None)) && (!settingsButtonRect.contains(touchLocation) || !isSettingsButtonEnabled) {
             onTouch.onNext(())
-        } else {
-            print("selector touched")
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
+        createRxSubscriptions()
     }
 }

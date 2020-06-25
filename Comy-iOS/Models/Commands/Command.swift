@@ -23,7 +23,22 @@ struct Command: Codable, Hashable {
     let name: String
     let imageURL: String?
     let mainParameter: CommandParameter?
-    let secondariesParameters: [CommandParameter]?
+    let secondariesParameters: [CommandParameter]
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case imageURL
+        case mainParameter
+        case secondariesParameters
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decode(String.self, forKey: .name)
+        imageURL = try values.decodeIfPresent(String.self, forKey: .imageURL)
+        mainParameter = try values.decodeIfPresent(CommandParameter.self, forKey: .mainParameter)
+        secondariesParameters = try values.decodeIfPresent([CommandParameter].self, forKey: .secondariesParameters) ?? []
+    }
 }
 
 extension Command {
