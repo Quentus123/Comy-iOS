@@ -1,8 +1,8 @@
 //
-//  IntegerSettingCell.swift
+//  BooleanSettingCell.swift
 //  Comy-iOS
 //
-//  Created by Quentin on 25/06/2020.
+//  Created by Quentin on 29/06/2020.
 //  Copyright © 2020 Quentin. All rights reserved.
 //
 
@@ -11,11 +11,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class IntegerSettingCell: UITableViewCell, SettingCell {
+class BooleanSettingCell: UITableViewCell, SettingCell {
+    
     
     @IBOutlet var xibView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var integerSelector: IntegerSelector!
+    @IBOutlet weak var switchView: UISwitch!
     
     var title: String {
         get {
@@ -28,10 +29,10 @@ class IntegerSettingCell: UITableViewCell, SettingCell {
     
     var value: String {
         get {
-            return String(integerSelector.value)
+            return String(switchView.isOn)
         }
         set {
-            integerSelector.value = Int(newValue) ?? 0
+            switchView.isOn = Bool(newValue) ?? false
         }
     }
     
@@ -49,7 +50,7 @@ class IntegerSettingCell: UITableViewCell, SettingCell {
     }
 
     private func commonInit(){
-        Bundle.main.loadNibNamed("IntegerSettingCell", owner: self, options: nil)
+        Bundle.main.loadNibNamed("BooleanSettingCell", owner: self, options: nil)
         contentView.addSubview(xibView)
         xibView.frame = contentView.bounds
         xibView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -60,24 +61,26 @@ class IntegerSettingCell: UITableViewCell, SettingCell {
     }
     
     private func createRxSubscriptions() {
-        integerSelector.valueChanged
-        .subscribe(onNext: { [weak self] intValue in
-            guard let self = self else { return }
-            self.valueChanged.onNext(String(intValue))
-        })
-        .disposed(by: disposeBag)
+        switchView.rx
+            .isOn
+            .subscribe(onNext: { [weak self] boolValue in
+                guard let self = self else { return }
+                self.valueChanged.onNext(String(boolValue))
+            })
+            .disposed(by: disposeBag)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0))
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
         createRxSubscriptions()
     }
 }
+
 
 

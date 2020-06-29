@@ -29,6 +29,8 @@
 		6615B77D2492328D006E2DE9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615B77C2492328D006E2DE9 /* Response.swift */; };
 		6642203F24976DDD00CD67D8 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6642203E24976DDD00CD67D8 /* CommandCell.xib */; };
 		6642204124976E6B00CD67D8 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642204024976E6B00CD67D8 /* CommandCell.swift */; };
+		6650F87B24AA13F000FC967A /* BooleanSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6650F87A24AA13F000FC967A /* BooleanSettingCell.xib */; };
+		6650F87D24AA14AD00FC967A /* BooleanSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650F87C24AA14AD00FC967A /* BooleanSettingCell.swift */; };
 		66600B1C24A0BBBF00374BEB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600B1B24A0BBBF00374BEB /* LoginController.swift */; };
 		66600B1E24A0BFE800374BEB /* TopRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600B1D24A0BFE800374BEB /* TopRoundedView.swift */; };
 		66600B2024A0C11300374BEB /* BeautifulTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66600B1F24A0C11300374BEB /* BeautifulTextField.swift */; };
@@ -99,6 +101,8 @@
 		6615B77C2492328D006E2DE9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		6642203E24976DDD00CD67D8 /* CommandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
 		6642204024976E6B00CD67D8 /* CommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
+		6650F87A24AA13F000FC967A /* BooleanSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooleanSettingCell.xib; sourceTree = "<group>"; };
+		6650F87C24AA14AD00FC967A /* BooleanSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanSettingCell.swift; sourceTree = "<group>"; };
 		66600B1B24A0BBBF00374BEB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		66600B1D24A0BFE800374BEB /* TopRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundedView.swift; sourceTree = "<group>"; };
 		66600B1F24A0C11300374BEB /* BeautifulTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulTextField.swift; sourceTree = "<group>"; };
@@ -314,6 +318,8 @@
 				66C20F6224A4A949007369F3 /* IntegerSettingCell.swift */,
 				66C20F6424A4A95C007369F3 /* IntegerSettingCell.xib */,
 				66C20F6824A4AD07007369F3 /* SettingCell.swift */,
+				6650F87A24AA13F000FC967A /* BooleanSettingCell.xib */,
+				6650F87C24AA14AD00FC967A /* BooleanSettingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				6615B73C2492222D006E2DE9 /* Main.storyboard in Resources */,
 				6642203F24976DDD00CD67D8 /* CommandCell.xib in Resources */,
 				66E7108A2498F4EC0022D9EA /* NotificationView.xib in Resources */,
+				6650F87B24AA13F000FC967A /* BooleanSettingCell.xib in Resources */,
 				66C14FE624A357BB000917D1 /* IntegerSelector.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,6 +658,7 @@
 				6615B7782492314C006E2DE9 /* ExecuteCommandMessage.swift in Sources */,
 				6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */,
 				66600B1E24A0BFE800374BEB /* TopRoundedView.swift in Sources */,
+				6650F87D24AA14AD00FC967A /* BooleanSettingCell.swift in Sources */,
 				6615B77D2492328D006E2DE9 /* Response.swift in Sources */,
 				6615B7762492311D006E2DE9 /* Message.swift in Sources */,
 				6615B77A2492322A006E2DE9 /* NeedStateMessage.swift in Sources */,

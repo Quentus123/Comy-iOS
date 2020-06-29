@@ -29,6 +29,7 @@ class CommandParamsController: UIViewController {
         
         titleLabel.text = "Parameters for \n\"\(command.name)\""
         
+        tableView.register(BooleanSettingCell.self, forCellReuseIdentifier: "BooleanSettingCell")
         tableView.register(IntegerSettingCell.self, forCellReuseIdentifier: "IntegerSettingCell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -67,7 +68,7 @@ extension CommandParamsController: UITableViewDataSource {
         let cell: SettingCell
         switch item.typeCode {
         case 0:
-            fatalError("Bool not implemented")
+            cell = (tableView.dequeueReusableCell(withIdentifier: "BooleanSettingCell", for: indexPath) as? BooleanSettingCell) ?? BooleanSettingCell()
         case 1:
             cell = (tableView.dequeueReusableCell(withIdentifier: "IntegerSettingCell", for: indexPath) as? IntegerSettingCell) ?? IntegerSettingCell()
         case 2:
@@ -94,7 +95,7 @@ extension CommandParamsController: UITableViewDataSource {
 extension CommandParamsController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 60
     }
     
 }
