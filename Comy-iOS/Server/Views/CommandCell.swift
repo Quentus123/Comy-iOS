@@ -118,10 +118,11 @@ class CommandCell: UITableViewCell {
         
         let touch = touches.first!
         let touchLocation = touch.location(in: self)
+        let mainContainerRect = mainContainer.superview!.convert(mainContainer.frame, to: self)
         let selectorContainerRect = selectorContainer.superview!.convert(selectorContainer.frame, to: self)
         let settingsButtonRect = settingsButton.superview!.convert(settingsButton.frame, to: self)
         
-        if ((!selectorContainerRect.contains(touchLocation)) || (selectorType == .None)) && (!settingsButtonRect.contains(touchLocation) || !isSettingsButtonEnabled) {
+        if (mainContainerRect.contains(touchLocation)) && ((!selectorContainerRect.contains(touchLocation) || (selectorType == .None)) && (!settingsButtonRect.contains(touchLocation) || !isSettingsButtonEnabled)) {
             onTouch.onNext(())
         }
     }

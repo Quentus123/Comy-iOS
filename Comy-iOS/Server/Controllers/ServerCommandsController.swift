@@ -200,9 +200,10 @@ class ServerCommandsController: UIViewController{
                     guard let cell = cell else { return }
                     
                     let touchLocation = pan.location(in: cell)
+                    let mainContainerRect = cell.mainContainer.superview!.convert(cell.mainContainer.frame, to: cell)
                     let selectorContainerRect = cell.selectorContainer.superview!.convert(cell.selectorContainer.frame, to: cell)
                     
-                    if (!selectorContainerRect.contains(touchLocation)) || (selectorType == .None) {
+                    if mainContainerRect.contains(touchLocation) && (!selectorContainerRect.contains(touchLocation)) || (selectorType == .None) {
                         UIView.animate(withDuration: 0.3) {
                             switch pan.state {
                             case .began:
