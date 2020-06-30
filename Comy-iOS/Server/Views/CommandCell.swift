@@ -39,7 +39,7 @@ class CommandCell: UITableViewCell {
     var onTouch: PublishSubject<Void> = PublishSubject()
     var valueChanged: PublishSubject<String> = PublishSubject()
     var onTapSetting: PublishSubject<Void> = PublishSubject()
-    private var disposeBag = DisposeBag() //will be reset in prepareForReuse
+    var disposeBag = DisposeBag() //will be reset in prepareForReuse
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

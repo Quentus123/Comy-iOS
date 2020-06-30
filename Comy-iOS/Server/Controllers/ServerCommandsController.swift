@@ -29,7 +29,7 @@ class ServerCommandsController: UIViewController{
         super.viewDidLoad()
         
         baseNotificationViewBottomConstraintConstant = view.constraints.filter({$0.firstAnchor == notificationView.bottomAnchor}).first!.constant
-        hideNotificationView()
+        notificationView.isHidden = true //will be set to false in viewDidAppear after first constraints change, it allows to modify bases constraints in storyboard instead of in this file
         notificationView.rx
             .tapGesture()
             .when(.recognized)
@@ -70,6 +70,11 @@ class ServerCommandsController: UIViewController{
             .when(.recognized)
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
+                if let url = self.serverViewModel.url {
+                    print(url)
+                    ServerCredentials.deleteCredentials(url: url)
+                }
+                
                 self.serverViewModel.disconnect()
             })
             .disposed(by: disposeBag)
@@ -81,11 +86,11 @@ class ServerCommandsController: UIViewController{
                 if !self.serverViewModel.isConnectionCancelled {
                     let disconnectionAlert = UIAlertController(title: "Disconnected", message: "You have been disconnected from server", preferredStyle: .alert)
                     disconnectionAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                        self.dismiss(animated: true)
+                        self.navigationController?.popViewController(animated: true)
                     }))
                     self.present(disconnectionAlert, animated: true)
                 } else {
-                    self.dismiss(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                 }
             })
             .disposed(by: disposeBag)
@@ -119,7 +124,7 @@ class ServerCommandsController: UIViewController{
                 guard let paramName = item.mainParameter?.name else { return }
                 self.serverViewModel.setParam(for: item, param: (name: paramName, value: value))
             })
-            .disposed(by: self.disposeBag)
+            .disposed(by: cell.disposeBag)
             
             let selectorType: CommandCell.SelectorType
             switch item.mainParameter?.typeCode {
@@ -143,7 +148,7 @@ class ServerCommandsController: UIViewController{
                     guard let cell = cell else { return }
                     cell.changeValueOfMainParameter(value: mainParam)
                 })
-                .disposed(by: self.disposeBag)
+                .disposed(by: cell.disposeBag)
             }
             
             self.serverViewModel.imagesData
@@ -151,7 +156,8 @@ class ServerCommandsController: UIViewController{
                     dict.keys.contains(item.name)
                 }
                 .compactMap({$0[item.name]})
-                .subscribe(onNext: { (data) in
+                .subscribe(onNext: { [weak cell] (data) in
+                    guard let cell = cell else { return }
                     guard let data = data else {
                         cell.backgroundImageView.image = UIImage(named: "no_image")
                         cell.backgroundImageView.tintColor = .systemGray
@@ -162,7 +168,7 @@ class ServerCommandsController: UIViewController{
                     cell.backgroundImageView.tintColor = nil
                     cell.backgroundImageView.backgroundColor = .clear
                 })
-                .disposed(by: self.disposeBag)
+                .disposed(by: cell.disposeBag)
             
             cell
                 .onTouch
@@ -171,7 +177,7 @@ class ServerCommandsController: UIViewController{
                     self.hideNotificationView()
                     self.serverViewModel.executeCommand(command: item)
                 })
-                .disposed(by: self.disposeBag)
+                .disposed(by: cell.disposeBag)
             
             cell
                 .onTapSetting
@@ -184,7 +190,7 @@ class ServerCommandsController: UIViewController{
                     controller.delegate = self
                     self.present(controller, animated: true)
                 })
-                .disposed(by: self.disposeBag)
+                .disposed(by: cell.disposeBag)
             
             cell
                 .rx
@@ -216,8 +222,16 @@ class ServerCommandsController: UIViewController{
                         }
                     }
                 })
-                .disposed(by: self.disposeBag)
+                .disposed(by: cell.disposeBag)
         }.disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        hideNotificationView()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.notificationView.isHidden = false
+        }
     }
     
     private func hideNotificationView() {

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ServerCredentials" representedClassName=".ServerCredentials" syncable="YES" codeGenerationType="category">
+        <attribute name="accessToken" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="refreshToken" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="url" optional="YES" attributeType="String" defaultValueString=""/>
+    </entity>
+    <elements>
+        <element name="ServerCredentials" positionX="-45" positionY="-27" width="128" height="88"/>
+    </elements>
 </model>

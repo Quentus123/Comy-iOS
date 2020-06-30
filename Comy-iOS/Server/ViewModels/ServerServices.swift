@@ -12,12 +12,16 @@ import Starscream
 class ServerServices {
     
     private var socket: WebSocket
-    private var token: String?
-    private var refreshToken: String?
+    var token: String?
+    var refreshToken: String?
     private var currentExecutionCommands: [Command:[String:String]] = [:]
     private var waitingRefreshTokenCommands: [Command:[String:String]] = [:]
     private var isWaitingRefreshTokenToGetState = false
     weak var delegate: ServerServicesDelegate?
+    
+    var url: String? {
+        return socket.request.url?.absoluteString
+    }
     
     init(request: URLRequest){
         socket = WebSocket(request: request)
@@ -37,6 +41,7 @@ class ServerServices {
             self.token = token
             if let refreshToken = response.refreshToken { //auth came from username and password
                 self.refreshToken = refreshToken
+                ServerCredentials.saveCredentials(url: socket.request.url!.absoluteString, accessToken: token, refreshToken: refreshToken)
                 delegate?.onAuthentification(success: true)
             } else if response.message == "refreshed token" { //we need to reexecute commands and get state if needed
                 print("Token successfully refreshed, executing commands : \(waitingRefreshTokenCommands)")
@@ -49,8 +54,10 @@ class ServerServices {
             }
         } else if response.message == "error with refresh token" { //auth tokens are not valid
             waitingRefreshTokenCommands = [:]
+            ServerCredentials.deleteCredentials(url: socket.request.url!.absoluteString)
             self.disconnect()
         } else {
+            ServerCredentials.deleteCredentials(url: socket.request.url!.absoluteString)
             delegate?.onAuthentification(success: false)
         }
     }

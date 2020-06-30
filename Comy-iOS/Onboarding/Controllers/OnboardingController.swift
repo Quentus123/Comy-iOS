@@ -24,7 +24,7 @@ class OnboardingController: UIViewController {
     private var baseNotificationViewBottomConstraintConstant: CGFloat!
     private var timerHideNotification: Timer?
     
-    private static let USER_DEFAULT_LAST_URL = "last server url"
+    static let USER_DEFAULT_LAST_URL = "last server url"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,14 +53,17 @@ class OnboardingController: UIViewController {
                 guard let url = URL(string: input) else { return }
                 UserDefaults.standard.set(input, forKey: Self.USER_DEFAULT_LAST_URL)
                 
-                self.connectButton.isEnabled = false
-                
-                self.urlTextField.resignFirstResponder()
-                
                 var request = URLRequest(url: url)
                 let timeoutInterval = 2.0
                 request.timeoutInterval = timeoutInterval
-                self.onboardingViewModel.connect(request: request)
+                
+                if let credentials = ServerCredentials.from(url: input) {
+                    self.onboardingViewModel.connectWithCredentials(request: request, accessToken: credentials.accessToken!, refreshToken: credentials.refreshToken!)
+                } else {
+                    self.connectButton.isEnabled = false
+                    self.urlTextField.resignFirstResponder()
+                    self.onboardingViewModel.connect(request: request)
+                }
             })
             .disposed(by: disposeBag)
         
@@ -82,25 +85,6 @@ class OnboardingController: UIViewController {
                 loginController.modalPresentationStyle = .overFullScreen
                 loginController.delegate = self
                 self.present(loginController, animated: true)
-                /*
-                let authAlert = UIAlertController(title: "Authentification required", message: nil, preferredStyle: .alert)
-                authAlert.addTextField(configurationHandler: { usernameTextField in
-                    usernameTextField.placeholder = "Username"
-                })
-                authAlert.addTextField(configurationHandler: { passwordTextField in
-                    passwordTextField.placeholder = "Password"
-                })
-                authAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
-                    guard let self = self else { return }
-                    let username = authAlert.textFields![0].text ?? ""
-                    let password = authAlert.textFields![1].text ?? ""
-                    self.onboardingViewModel.authentificate(id: username, password: password)
-                }))
-                authAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-                    self.connectButton.isEnabled = true
-                }))
-                self.present(authAlert, animated: true)
-                */
             })
             .disposed(by: disposeBag)
         
@@ -119,9 +103,8 @@ class OnboardingController: UIViewController {
                 guard let self = self else { return }
                 self.connectButton.isEnabled = true
                 let controller = self.storyboard!.instantiateViewController(withIdentifier: "ServerCommandsController") as! ServerCommandsController
-                controller.modalPresentationStyle = .fullScreen
                 controller.serverViewModel = serverViewModel
-                self.present(controller, animated: true)
+                self.navigationController?.pushViewController(controller, animated: true)
             })
             .disposed(by: disposeBag)
         

@@ -54,6 +54,8 @@
 		66E7108A2498F4EC0022D9EA /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E710892498F4EC0022D9EA /* NotificationView.xib */; };
 		66E7108C2498F6990022D9EA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108B2498F6990022D9EA /* NotificationView.swift */; };
 		66E7108E249904BA0022D9EA /* CommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E7108D249904BA0022D9EA /* CommandResponse.swift */; };
+		66EE640424AB642C007367EB /* LoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE640324AB642C007367EB /* LoadingController.swift */; };
+		66EE640C24AB7863007367EB /* ServerCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE640B24AB7863007367EB /* ServerCredentials.swift */; };
 		A717272C7577C392AE26B756 /* Pods_Comy_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A17DF704DDB833988D17555 /* Pods_Comy_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,8 @@
 		66E710892498F4EC0022D9EA /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		66E7108B2498F6990022D9EA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		66E7108D249904BA0022D9EA /* CommandResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandResponse.swift; sourceTree = "<group>"; };
+		66EE640324AB642C007367EB /* LoadingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingController.swift; sourceTree = "<group>"; };
+		66EE640B24AB7863007367EB /* ServerCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCredentials.swift; sourceTree = "<group>"; };
 		690CB029B14843CB68FA22DD /* Pods_ComyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A17DF704DDB833988D17555 /* Pods_Comy_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comy_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7315928DE9C84BE2AC521E22 /* Pods-Comy-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comy-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Comy-iOSTests/Pods-Comy-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		661186D9249898EA001BA0AF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				66EE640324AB642C007367EB /* LoadingController.swift */,
 				661186DA249898FE001BA0AF /* OnboardingController.swift */,
 				66600B1B24A0BBBF00374BEB /* LoginController.swift */,
 			);
@@ -246,6 +251,7 @@
 		6615B76824922C87006E2DE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				66EE640A24AB7855007367EB /* CoreData */,
 				6615B76D2492304D006E2DE9 /* Commands */,
 				6615B774249230EE006E2DE9 /* Messages */,
 				6615B77B24923277006E2DE9 /* Responses */,
@@ -402,6 +408,14 @@
 				66C14FE324A34B2D000917D1 /* ServerViewModelTest.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		66EE640A24AB7855007367EB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				66EE640B24AB7863007367EB /* ServerCredentials.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		88D81C6C5CBF75AD446C6567 /* Pods */ = {
@@ -680,7 +694,9 @@
 				66C14FE824A35882000917D1 /* IntegerSelector.swift in Sources */,
 				66C20F6924A4AD07007369F3 /* SettingCell.swift in Sources */,
 				6615B7712492308A006E2DE9 /* CommandResult.swift in Sources */,
+				66EE640424AB642C007367EB /* LoadingController.swift in Sources */,
 				66C8FAB4249BDCA700397933 /* ServerInfoResponse.swift in Sources */,
+				66EE640C24AB7863007367EB /* ServerCredentials.swift in Sources */,
 				6615B73F2492222D006E2DE9 /* Comy_iOS.xcdatamodeld in Sources */,
 				6615B76F2492305E006E2DE9 /* Command.swift in Sources */,
 				66C20F6324A4A949007369F3 /* IntegerSettingCell.swift in Sources */,

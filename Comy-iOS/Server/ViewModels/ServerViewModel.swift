@@ -21,6 +21,10 @@ class ServerViewModel {
     var services: ServerServices
     var commandsParams: BehaviorSubject<[Command:[String:String]]> = BehaviorSubject(value: [:])
     
+    var url: String? {
+        return services.url
+    }
+    
     init(services: ServerServices){
         self.services = services
         services.refreshState()

@@ -35,6 +35,21 @@ class OnBoardingViewModel {
         services?.authentificate(id: id, password: password)
     }
     
+    func connectWithCredentials(request: URLRequest, accessToken: String, refreshToken: String) {
+        timedOutTimer?.invalidate()
+        
+        services = ServerServices(request: request)
+        services?.token = accessToken
+        services?.refreshToken = refreshToken
+        services?.delegate = self
+        services?.connect()
+        
+        timedOutTimer = Timer.scheduledTimer(withTimeInterval: request.timeoutInterval + 0.2, repeats: false, block: { [weak self] _ in
+            guard let self = self else { return }
+            self.isTimedOut.onNext(true)
+        })
+    }
+    
     
 }
 
@@ -59,15 +74,20 @@ extension OnBoardingViewModel: ServerServicesDelegate {
     }
     
     func didReceiveServerInfo(infos: ServerInfoResponse) {
+        guard let services = services else { return }
         if infos.isSecured {
-            isAuthentificationNeeded.onNext(true)
+            if (services.token != nil && services.refreshToken != nil) {
+                services.refreshState()
+            } else {
+                isAuthentificationNeeded.onNext(true)
+            }
         } else {
             onAuthentification(success: true)
         }
     }
     
     func didReceiveNewState(state: ServerStateResponse) {
-        
+        onAuthentification(success: true)
     }
     
     func didReceiveCommandResult(response: CommandResponse) {
