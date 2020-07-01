@@ -22,6 +22,13 @@ class CommandParamsController: UIViewController {
     var command: Command!
     var params: [String:String]!
     
+    private var groupedParams: [[CommandParameter]] {
+        var commandParams = command.mainParameter != nil ? [command.mainParameter!] : []
+        commandParams.append(contentsOf: command.secondariesParameters)
+        let groups: [[CommandParameter]] = Dictionary(grouping: commandParams, by: \.groupIndex).map(\.value).sorted(by: {return $0.first?.groupIndex ?? 0 < $1.first?.groupIndex ?? 0})
+        return groups
+    }
+    
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -56,15 +63,16 @@ class CommandParamsController: UIViewController {
 
 extension CommandParamsController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.groupedParams.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.params.count
+        return self.groupedParams[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var commandParams = command.mainParameter != nil ? [command.mainParameter!] : []
-        commandParams.append(contentsOf: command.secondariesParameters)
-        
-        let item = commandParams[indexPath.row]
+        let item = groupedParams[indexPath.section][indexPath.row]
         let cell: SettingCell
         switch item.typeCode {
         case 0:

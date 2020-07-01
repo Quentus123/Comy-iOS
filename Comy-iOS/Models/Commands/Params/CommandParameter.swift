@@ -10,11 +10,9 @@ import Foundation
 
 struct CommandParameter: Codable {
     
-    private enum CodingKeys: String, CodingKey {
-        case name, typeCode, defaultValue
-    }
-    
     let name: String
     let typeCode: Int
     let defaultValue: String
+    let groupIndex: Int
+    
 }
