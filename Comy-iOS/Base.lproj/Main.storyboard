@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7WG-As-c4H">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,14 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="LpA-oD-Ez7">
-                                <rect key="frame" x="124" y="64" width="166" height="165.5"/>
+                                <rect key="frame" x="124.33333333333333" y="63.999999999999986" width="165.33333333333337" height="165.66666666666663"/>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LpA-oD-Ez7" secondAttribute="height" id="28S-GQ-Fyf"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwi-wx-6w3">
-                                <rect key="frame" x="103" y="279.5" width="208.5" height="29"/>
+                                <rect key="frame" x="102.66666666666667" y="279.66666666666669" width="208.66666666666663" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWf-4n-Q71" customClass="BeautifulTextField" customModule="Comy" customModuleProvider="target">
-                                <rect key="frame" x="62" y="328.5" width="290" height="65.5"/>
+                                <rect key="frame" x="62" y="328.66666666666669" width="290" height="65.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Server URL"/>
@@ -140,15 +140,15 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3x-Is-C04" userLabel="Main Container" customClass="RoundedView" customModule="Comy" customModuleProvider="target">
-                                <rect key="frame" x="41.5" y="248.5" width="331" height="409"/>
+                                <rect key="frame" x="41.333333333333343" y="248.66666666666663" width="331.33333333333326" height="409"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Login required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3m-xe-mmy">
-                                        <rect key="frame" x="77.5" y="15" width="176" height="30"/>
+                                        <rect key="frame" x="77.999999999999986" y="15.000000000000028" width="175.66666666666663" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o86-bM-5Ek">
-                                        <rect key="frame" x="116" y="266" width="99" height="36"/>
+                                        <rect key="frame" x="116" y="266" width="99.333333333333314" height="36"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Log In">
@@ -156,10 +156,10 @@
                                         </state>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pcu-j8-pXn">
-                                        <rect key="frame" x="33" y="60" width="265" height="176"/>
+                                        <rect key="frame" x="33.333333333333343" y="60.000000000000028" width="264.66666666666663" height="176"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5b-AX-VHC" customClass="BeautifulTextField" customModule="Comy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="265" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="264.66666666666669" height="76.333333333333329"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Username"/>
@@ -175,11 +175,11 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLY-D3-og2">
-                                                <rect key="frame" x="0.0" y="76.5" width="265" height="23"/>
+                                                <rect key="frame" x="0.0" y="76.333333333333314" width="264.66666666666669" height="23"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqM-Ea-dQ5" customClass="BeautifulTextField" customModule="Comy" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="99.5" width="265" height="76.5"/>
+                                                <rect key="frame" x="0.0" y="99.333333333333314" width="264.66666666666669" height="76.666666666666686"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
@@ -248,20 +248,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HHQ-4M-ZRe">
-                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="125.66666666666669" width="414" height="736.33333333333326"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmy-di-ez2" userLabel="Bar container">
-                                <rect key="frame" x="0.0" y="44" width="414" height="82"/>
+                                <rect key="frame" x="0.0" y="44.000000000000007" width="414" height="81.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="a4L-HO-5wW">
-                                        <rect key="frame" x="182" y="29" width="50.5" height="24"/>
+                                        <rect key="frame" x="182" y="29" width="50.333333333333343" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-LH-qOP">
-                                        <rect key="frame" x="361.5" y="28" width="22.5" height="26"/>
+                                        <rect key="frame" x="362" y="28" width="22" height="26"/>
                                         <state key="normal" image="arrow.counterclockwise" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                         </state>
@@ -277,7 +277,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HHQ-4M-ZRe" firstAttribute="leading" secondItem="sUv-Hb-wwf" secondAttribute="leading" id="5Qc-cS-SVE"/>
                             <constraint firstItem="sUv-Hb-wwf" firstAttribute="bottom" secondItem="HHQ-4M-ZRe" secondAttribute="bottom" id="80q-d0-wmw"/>
@@ -310,7 +310,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdB-ES-b6a" userLabel="Bar container">
-                                <rect key="frame" x="0.0" y="44" width="414" height="82"/>
+                                <rect key="frame" x="0.0" y="44.000000000000007" width="414" height="81.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="lqh-V7-kkc">
                                         <rect key="frame" x="175" y="26" width="64" height="30"/>
@@ -319,7 +319,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTt-hr-4mQ">
-                                        <rect key="frame" x="20" y="20.5" width="41" height="41"/>
+                                        <rect key="frame" x="20" y="20.333333333333329" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NTt-hr-4mQ" secondAttribute="height" id="CCE-sQ-TC1"/>
                                         </constraints>
@@ -342,7 +342,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zUi-El-hGI">
-                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="125.66666666666669" width="414" height="736.33333333333326"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gd-SW-1Fs" customClass="NotificationView" customModule="Comy" customModuleProvider="target">
                                 <rect key="frame" x="10" y="782" width="394" height="70"/>

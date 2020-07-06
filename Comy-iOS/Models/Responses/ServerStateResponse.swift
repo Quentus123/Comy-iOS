@@ -12,5 +12,5 @@ struct ServerStateResponse: Response{
     let type: String
     let name: String
     let commands: [Command]
-    let authError: AuthentificationResponse?
+    let authError: AuthenticationResponse?
 }

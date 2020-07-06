@@ -261,7 +261,7 @@ class ServerCommandsController: UIViewController{
         let newBottomConstraint = NSLayoutConstraint(item: notificationView as Any,
                                                      attribute: .bottom,
                                                      relatedBy: .equal,
-                                                     toItem: view,
+                                                     toItem: view.safeAreaLayoutGuide,
                                                      attribute: .bottom,
                                                      multiplier: 1,
                                                      constant: baseNotificationViewBottomConstraintConstant)

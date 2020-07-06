@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct AuthentificationUserMessage: Message {
-    let type: String = "AuthentificateUserMessage"
-    let id: String
+struct AuthenticationUserMessage: Message {
+    let type: String = "AuthenticateUserMessage"
+    let username: String
     let password: String
 }

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationView" customModule="Comy_iOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationView" customModule="Comy" customModuleProvider="target">
             <connections>
                 <outlet property="contentLabel" destination="MtB-4S-w0l" id="1Lr-Aa-YcL"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="lIp-b8-t16"/>
@@ -21,17 +21,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CV-sj-NcQ" userLabel="Main Container">
-                    <rect key="frame" x="44" y="0.0" width="808" height="393"/>
+                    <rect key="frame" x="44" y="0.0" width="808" height="414"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AGp-my-ZUX">
-                            <rect key="frame" x="10" y="79" width="236" height="235"/>
+                            <rect key="frame" x="10" y="83.5" width="248.5" height="247"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="AGp-my-ZUX" secondAttribute="height" id="ZFK-Wk-yiS"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Command sent successfully" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="MtB-4S-w0l">
-                            <rect key="frame" x="256" y="184.5" width="542" height="24"/>
+                            <rect key="frame" x="268.5" y="195" width="529.5" height="24"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9CV-sj-NcQ" secondAttribute="bottom" id="HEa-lT-679"/>
+                <constraint firstAttribute="bottom" secondItem="9CV-sj-NcQ" secondAttribute="bottom" id="HEa-lT-679"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9CV-sj-NcQ" secondAttribute="trailing" id="Kn5-dM-nJX"/>
                 <constraint firstItem="9CV-sj-NcQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NYI-lq-xP7"/>
                 <constraint firstItem="9CV-sj-NcQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Pov-Iw-KSO"/>

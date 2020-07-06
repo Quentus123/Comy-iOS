@@ -33,10 +33,10 @@ class ServerServices {
     }
     
     func authentificate(id: String, password: String) {
-        socket.write(string: String(data: try! JSONEncoder().encode(AuthentificationUserMessage(id: id, password: password)), encoding: .utf8)!)
+        socket.write(string: String(data: try! JSONEncoder().encode(AuthenticationUserMessage(username: id, password: password)), encoding: .utf8)!)
     }
     
-    private func handleAuthResponse(response: AuthentificationResponse) {
+    private func handleAuthResponse(response: AuthenticationResponse) {
         if let token = response.token {
             self.token = token
             if let refreshToken = response.refreshToken { //auth came from username and password
@@ -95,7 +95,7 @@ extension ServerServices: WebSocketDelegate {
             if let dataEvent = stringEvent.data(using: .utf8){
                 if let serverInfoResponse = try? JSONDecoder().decode(ServerInfoResponse.self, from: dataEvent) {
                     delegate?.didReceiveServerInfo(infos: serverInfoResponse)
-                } else if let authResponse = try? JSONDecoder().decode(AuthentificationResponse.self, from: dataEvent) {
+                } else if let authResponse = try? JSONDecoder().decode(AuthenticationResponse.self, from: dataEvent) {
                     handleAuthResponse(response: authResponse)
                 }
                 else if let serverStateResponse = try? JSONDecoder().decode(ServerStateResponse.self, from: dataEvent){

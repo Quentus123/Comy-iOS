@@ -45,10 +45,10 @@
 		66C20F6524A4A95C007369F3 /* IntegerSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66C20F6424A4A95C007369F3 /* IntegerSettingCell.xib */; };
 		66C20F6724A4AAAD007369F3 /* CommandParamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C20F6624A4AAAD007369F3 /* CommandParamsController.swift */; };
 		66C20F6924A4AD07007369F3 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C20F6824A4AD07007369F3 /* SettingCell.swift */; };
-		66C8FAAC249BDAFA00397933 /* AuthentificationTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */; };
-		66C8FAAE249BDB3200397933 /* AuthentificateUserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */; };
+		66C8FAAC249BDAFA00397933 /* AuthenticationTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAB249BDAFA00397933 /* AuthenticationTokenMessage.swift */; };
+		66C8FAAE249BDB3200397933 /* AuthenticateUserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAD249BDB3200397933 /* AuthenticateUserMessage.swift */; };
 		66C8FAB0249BDB6100397933 /* RefreshTokenMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */; };
-		66C8FAB2249BDC1E00397933 /* AuthentificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAB1249BDC1E00397933 /* AuthentificationResponse.swift */; };
+		66C8FAB2249BDC1E00397933 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAB1249BDC1E00397933 /* AuthenticationResponse.swift */; };
 		66C8FAB4249BDCA700397933 /* ServerInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8FAB3249BDCA700397933 /* ServerInfoResponse.swift */; };
 		66E170F7249CE7670002EDAC /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E170F6249CE7670002EDAC /* OnboardingViewModel.swift */; };
 		66E7108A2498F4EC0022D9EA /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E710892498F4EC0022D9EA /* NotificationView.xib */; };
@@ -123,10 +123,10 @@
 		66C20F6424A4A95C007369F3 /* IntegerSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntegerSettingCell.xib; sourceTree = "<group>"; };
 		66C20F6624A4AAAD007369F3 /* CommandParamsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParamsController.swift; sourceTree = "<group>"; };
 		66C20F6824A4AD07007369F3 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
-		66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationTokenMessage.swift; sourceTree = "<group>"; };
-		66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificateUserMessage.swift; sourceTree = "<group>"; };
+		66C8FAAB249BDAFA00397933 /* AuthenticationTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTokenMessage.swift; sourceTree = "<group>"; };
+		66C8FAAD249BDB3200397933 /* AuthenticateUserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserMessage.swift; sourceTree = "<group>"; };
 		66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenMessage.swift; sourceTree = "<group>"; };
-		66C8FAB1249BDC1E00397933 /* AuthentificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationResponse.swift; sourceTree = "<group>"; };
+		66C8FAB1249BDC1E00397933 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		66C8FAB3249BDCA700397933 /* ServerInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoResponse.swift; sourceTree = "<group>"; };
 		66E170F6249CE7670002EDAC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		66E710892498F4EC0022D9EA /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
@@ -284,8 +284,8 @@
 				6615B7752492311D006E2DE9 /* Message.swift */,
 				6615B7772492314C006E2DE9 /* ExecuteCommandMessage.swift */,
 				6615B7792492322A006E2DE9 /* NeedStateMessage.swift */,
-				66C8FAAB249BDAFA00397933 /* AuthentificationTokenMessage.swift */,
-				66C8FAAD249BDB3200397933 /* AuthentificateUserMessage.swift */,
+				66C8FAAB249BDAFA00397933 /* AuthenticationTokenMessage.swift */,
+				66C8FAAD249BDB3200397933 /* AuthenticateUserMessage.swift */,
 				66C8FAAF249BDB6100397933 /* RefreshTokenMessage.swift */,
 			);
 			path = Messages;
@@ -300,7 +300,7 @@
 				6615B77224923093006E2DE9 /* CommandResultStatus.swift */,
 				660F160E2493D913006790BF /* ServerStateResponse.swift */,
 				66C8FAB3249BDCA700397933 /* ServerInfoResponse.swift */,
-				66C8FAB1249BDC1E00397933 /* AuthentificationResponse.swift */,
+				66C8FAB1249BDC1E00397933 /* AuthenticationResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -666,9 +666,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6615B77324923093006E2DE9 /* CommandResultStatus.swift in Sources */,
-				66C8FAB2249BDC1E00397933 /* AuthentificationResponse.swift in Sources */,
+				66C8FAB2249BDC1E00397933 /* AuthenticationResponse.swift in Sources */,
 				66C8FAB0249BDB6100397933 /* RefreshTokenMessage.swift in Sources */,
-				66C8FAAC249BDAFA00397933 /* AuthentificationTokenMessage.swift in Sources */,
+				66C8FAAC249BDAFA00397933 /* AuthenticationTokenMessage.swift in Sources */,
 				6615B7782492314C006E2DE9 /* ExecuteCommandMessage.swift in Sources */,
 				6615B7352492222D006E2DE9 /* AppDelegate.swift in Sources */,
 				66600B1E24A0BFE800374BEB /* TopRoundedView.swift in Sources */,
@@ -687,7 +687,7 @@
 				6642204124976E6B00CD67D8 /* CommandCell.swift in Sources */,
 				6615B7372492222D006E2DE9 /* SceneDelegate.swift in Sources */,
 				661186DB249898FE001BA0AF /* OnboardingController.swift in Sources */,
-				66C8FAAE249BDB3200397933 /* AuthentificateUserMessage.swift in Sources */,
+				66C8FAAE249BDB3200397933 /* AuthenticateUserMessage.swift in Sources */,
 				6679BB5A24A25A7400064894 /* CommandParameter.swift in Sources */,
 				66600B1C24A0BBBF00374BEB /* LoginController.swift in Sources */,
 				66E170F7249CE7670002EDAC /* OnboardingViewModel.swift in Sources */,

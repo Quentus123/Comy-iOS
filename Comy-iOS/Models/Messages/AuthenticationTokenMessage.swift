@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AuthentificationTokenMessage: Message {
-    let type: String = "AuthentificateTokenMessage"
+struct AuthenticationTokenMessage: Message {
+    let type: String = "AuthenticateTokenMessage"
     let token: String
 }

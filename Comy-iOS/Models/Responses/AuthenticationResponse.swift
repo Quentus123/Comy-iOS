@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct AuthentificationResponse: Response{
-    let type: String = "AuthentificationResponse"
+struct AuthenticationResponse: Response{
+    let type: String = "AuthenticationResponse"
     let token: String?
     let refreshToken: String?
-    let userId: String?
+    let username: String?
     let message: String
     let code: Int
     let tokenExpiredError: Bool
