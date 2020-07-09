@@ -882,7 +882,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.quentus123.comy;
 				PRODUCT_NAME = Comy;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -902,7 +902,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "quentindiebold.Comy-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.quentus123.comy;
 				PRODUCT_NAME = Comy;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

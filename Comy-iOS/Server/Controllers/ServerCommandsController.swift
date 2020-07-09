@@ -41,7 +41,6 @@ class ServerCommandsController: UIViewController{
         
         commandsTableView.register(CommandCell.self, forCellReuseIdentifier: "CommandCell")
         commandsTableView.rx.setDelegate(self).disposed(by: disposeBag)
-        commandsTableView.allowsSelection = false
         
         serverViewModel.serverName
             .bind(to: nameServerLabel.rx.text).disposed(by: disposeBag)
@@ -189,38 +188,6 @@ class ServerCommandsController: UIViewController{
                     controller.params = params
                     controller.delegate = self
                     self.present(controller, animated: true)
-                })
-                .disposed(by: cell.disposeBag)
-            
-            cell
-                .rx
-                .longPressGesture(configuration: { (gestureReco, _) in
-                    gestureReco.cancelsTouchesInView = false
-                    gestureReco.minimumPressDuration = 0.01
-                    gestureReco.numberOfTouchesRequired = 1
-                    gestureReco.numberOfTapsRequired = 0
-                    gestureReco.allowableMovement = 1.0
-                })
-                .when(.began, .ended)
-                .subscribe(onNext: { [weak cell] pan in
-                    guard let cell = cell else { return }
-                    
-                    let touchLocation = pan.location(in: cell)
-                    let mainContainerRect = cell.mainContainer.superview!.convert(cell.mainContainer.frame, to: cell)
-                    let selectorContainerRect = cell.selectorContainer.superview!.convert(cell.selectorContainer.frame, to: cell)
-                    
-                    if mainContainerRect.contains(touchLocation) && (!selectorContainerRect.contains(touchLocation)) || (selectorType == .None) {
-                        UIView.animate(withDuration: 0.3) {
-                            switch pan.state {
-                            case .began:
-                                cell.mainContainer.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
-                            case .ended:
-                                cell.mainContainer.transform = CGAffineTransform(scaleX: 1, y: 1)
-                            default:
-                                break
-                            }
-                        }
-                    }
                 })
                 .disposed(by: cell.disposeBag)
         }.disposed(by: disposeBag)

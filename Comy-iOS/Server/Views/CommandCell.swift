@@ -59,6 +59,12 @@ class CommandCell: UITableViewCell {
         
         selectorContainer.backgroundColor = selectorContainer.backgroundColor?.withAlphaComponent(0.7)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapMainContainer(sender:)))
+        tapGesture.delegate = self
+        mainContainer.addGestureRecognizer(tapGesture)
+        
+        selectionStyle = .none
+        
         createRxSubscriptions()
         settingsButton.imageView?.contentMode = .scaleAspectFit
         isSettingsButtonEnabled = false
@@ -113,17 +119,25 @@ class CommandCell: UITableViewCell {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        let touch = touches.first!
-        let touchLocation = touch.location(in: self)
-        let mainContainerRect = mainContainer.superview!.convert(mainContainer.frame, to: self)
-        let selectorContainerRect = selectorContainer.superview!.convert(selectorContainer.frame, to: self)
-        let settingsButtonRect = settingsButton.superview!.convert(settingsButton.frame, to: self)
-        
-        if (mainContainerRect.contains(touchLocation)) && ((!selectorContainerRect.contains(touchLocation) || (selectorType == .None)) && (!settingsButtonRect.contains(touchLocation) || !isSettingsButtonEnabled)) {
-            onTouch.onNext(())
+    @objc private func onTapMainContainer(sender: Any) {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let self = self else { return }
+            self.mainContainer.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+        onTouch.onNext(())
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                guard let self = self else { return }
+                self.mainContainer.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                guard let self = self else { return }
+                self.mainContainer.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }
         }
     }
     
@@ -131,5 +145,14 @@ class CommandCell: UITableViewCell {
         super.prepareForReuse()
         disposeBag = DisposeBag()
         createRxSubscriptions()
+    }
+    
+    override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let touchLocation = touch.location(in: self)
+        let mainContainerRect = mainContainer.superview!.convert(mainContainer.frame, to: self)
+        let selectorContainerRect = selectorContainer.superview!.convert(selectorContainer.frame, to: self)
+        let settingsButtonRect = settingsButton.superview!.convert(settingsButton.frame, to: self)
+        
+        return (mainContainerRect.contains(touchLocation)) && ((!selectorContainerRect.contains(touchLocation) || (selectorType == .None)) && (!settingsButtonRect.contains(touchLocation) || !isSettingsButtonEnabled))
     }
 }

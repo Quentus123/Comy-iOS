@@ -136,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAj-LI-cUC" userLabel="Dark Background">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3x-Is-C04" userLabel="Main Container" customClass="RoundedView" customModule="Comy" customModuleProvider="target">
@@ -218,7 +218,7 @@
                         <constraints>
                             <constraint firstItem="j3x-Is-C04" firstAttribute="width" secondItem="hrx-I5-04y" secondAttribute="width" multiplier="0.8" id="8uC-PH-gTO"/>
                             <constraint firstItem="hrx-I5-04y" firstAttribute="trailing" secondItem="qAj-LI-cUC" secondAttribute="trailing" id="BiX-6O-f3d"/>
-                            <constraint firstItem="hrx-I5-04y" firstAttribute="bottom" secondItem="qAj-LI-cUC" secondAttribute="bottom" id="HoB-dn-TCI"/>
+                            <constraint firstItem="qAj-LI-cUC" firstAttribute="bottom" secondItem="xtp-Vq-Gf3" secondAttribute="bottom" id="HoB-dn-TCI"/>
                             <constraint firstItem="j3x-Is-C04" firstAttribute="centerY" secondItem="hrx-I5-04y" secondAttribute="centerY" id="PMf-Wb-A0o"/>
                             <constraint firstItem="qAj-LI-cUC" firstAttribute="leading" secondItem="hrx-I5-04y" secondAttribute="leading" id="Po0-ON-OaH"/>
                             <constraint firstItem="qAj-LI-cUC" firstAttribute="top" secondItem="xtp-Vq-Gf3" secondAttribute="top" id="SCD-cD-TdU"/>
